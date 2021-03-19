@@ -1,116 +1,83 @@
-N√∫mero de vagas: 29
+N√∫mero de vagas: 15
 
 Vereadores eleitos:
-1 - JEOVA BARBOSA DE CARVALHO ALENCAR / JEOV√Å ALENCAR (MDB, 11062 votos)
-2 - EVANDRO TAJRA HIDD FILHO / EVANDRO HIDD (PDT, 6943 votos)
-3 - FERNANDA GABRIELLY COSTA GOMES / FERNANDA GOMES (SOLIDARIEDADE, 6078 votos)
-4 - LEVINO DOS SANTOS FILHO / LEVINO DE JESUS (REPUBLICANOS, 5884 votos)
-5 - GUSTAVO CROMWELL DE CARVALHO PACIFICO / GUSTAVO DE CARVALHO (PSDB, 5685 votos)
-6 - PAULO DA SILVA LOPES / PAULO LOPES (PSDB, 5079 votos)
-7 - EDSON MOURA SAMPAIO MELO / EDSON MELO (PSDB, 5012 votos)
-8 - LUIS ANDRE DE ARRUDA MONT ALVERNE / LUIS ANDRE (PSL, 4815 votos)
-9 - ALU√çSIO PARENTES SAMPAIO NETO / ALU√çSIO SAMPAIO (PP, 4712 votos)
-10 - LEONARDO EULALIO DE ARAUJO LIMA / DR LEONARDO EULALIO (PL, 4597 votos)
-11 - TERESINHA DE SOUSA MEDEIROS SANTOS / TERESINHA MEDEIROS (PSL, 4551 votos)
-12 - JOS√â VEN√ÇNCIO CARDOSO NETO / VEN√ÇNCIO (PSDB, 4523 votos)
-13 - VALDEMIR SIVIRINO VIRGINO / VALDEMIR VIRGINO (PP, 4484 votos)
-14 - ENZO SAMUEL ALENCAR SILVA / ENZO SAMUEL (PDT, 4342 votos)
-15 - MANOEL BEZERRA DA SILVA NETO / NETO DO ANGELIM (PP, 4103 votos)
-16 - JOS√â NITO DE OLIVEIRA SOUSA / PROFESSOR Z√â NITO (MDB, 4095 votos)
-17 - DEOLINDO MOURA NETO / DEOLINDO MOURA (PT, 3995 votos)
-18 - EDILBERTO BORGES DE OLIVEIRA / DUDU (PT, 3860 votos)
-19 - LUIZ GONZAGA LOB√ÉO CASTELO BRANCO / DR LUIZ LOB√ÉO (MDB, 3774 votos)
-20 - ELZUILA ALVES CALISTO / ELZUILA CALISTO (PT, 3530 votos)
-21 - THANANDRA STEFANI BORGES LIMA FELIX / THANANDRA SARAPATINHAS (PATRIOTA, 3156 votos)
-22 - POLLYANNA KECCY VIEIRA DA ROCHA / POLLYANNA ROCHA (PV, 3033 votos)
-23 - ISMAEL DO NASCIMENTO SILVA / ISMAEL SILVA (PSD, 2937 votos)
-24 - VINICIO RONDINELLE FERREIRA MAGALHAES / VINICIO FERREIRA (AVANTE, 2589 votos)
-25 - ALAN BRAND√ÉO DOS SANTOS SOUSA / ALAN BRAND√ÉO (PDT, 2564 votos)
-26 - RENATO PIRES BERGER / RENATO BERGER (PSD, 2504 votos)
-27 - BRUNO GALISA VILARINHO SOARES / BRUNO VILARINHO (PTB, 2104 votos)
-28 - MARCOS VENICIUS MEDEIROS COSTA FILHO / MARKIM COSTA (DEM, 2062 votos)
-29 - ROBERVAL AZEVEDO QUEIROZ / CAPIT√ÉO ROBERVAL QUEIROZ (DEM, 1590 votos)
+1 - DENNER JANU¡RIO DA SILVA / DENNINHO SILVA (CIDADANIA, 7213 votos)
+2 - CAMILA COSTA VALAD√O / CAMILA VALAD√O (PSOL, 5625 votos)
+3 - DAVI ESMAEL MENEZES DE ALMEIDA / DAVI ESMAEL (PSD, 3408 votos)
+4 - LUIZ EMANUEL ZOUAIN DA ROCHA / LUIZ EMANUEL (CIDADANIA, 3105 votos)
+5 - LEANDRO PIQUET DE AZEREDO BASTOS / DELEGADO PIQUET (REPUBLICANOS, 2364 votos)
+6 - MAURICIO SOARES  LEITE / MAURICIO LEITE (CIDADANIA, 2247 votos)
+7 - KARLA SILVA COSER / KARLA COSER (PT, 1961 votos)
+8 - LUIZ PAULO RODRIGUES DE AMORIM / LUIZ PAULO AMORIM (PV, 1952 votos)
+9 - ANDERSON GOGGI RODRIGUES / ANDERSON GOGGI (PTB, 1736 votos)
+10 - ANDR… BRANDINO PEGO / ANDR… BRANDINO (PSC, 1693 votos)
+11 - ANTONIO EDUARDO OLIVEIRA SANTOS / DUDA BRASIL (PSL, 1567 votos)
+12 - GILVAN AGUIAR COSTA / GILVAN PATRIOTA (PATRIOTA, 1560 votos)
+13 - ADALTO BASTOS DAS NEVES / DALTO NEVES (PDT, 1300 votos)
+14 - ARMANDO FONTOURA BORGES FILHO / ARMANDINHO FONTOURA (PODE, 1264 votos)
+15 - ALOÕSIO VAREJ√O / ALOÕSIO VAREJ√O (PSB, 1239 votos)
 
 Candidatos mais votados (em ordem decrescente de vota√ß√£o e respeitando n√∫mero de vagas):
-1 - JEOVA BARBOSA DE CARVALHO ALENCAR / JEOV√Å ALENCAR (MDB, 11062 votos)
-2 - EVANDRO TAJRA HIDD FILHO / EVANDRO HIDD (PDT, 6943 votos)
-3 - FERNANDA GABRIELLY COSTA GOMES / FERNANDA GOMES (SOLIDARIEDADE, 6078 votos)
-4 - LEVINO DOS SANTOS FILHO / LEVINO DE JESUS (REPUBLICANOS, 5884 votos)
-5 - GUSTAVO CROMWELL DE CARVALHO PACIFICO / GUSTAVO DE CARVALHO (PSDB, 5685 votos)
-6 - CAIO LUSTOSA BUCAR / CAIO BUCAR (REPUBLICANOS, 5609 votos)
-7 - GUSTAVO SOUZA DE ALMENDRA GAIOSO / GUSTAVO GAIOSO (SOLIDARIEDADE, 5240 votos)
-8 - PAULO DA SILVA LOPES / PAULO LOPES (PSDB, 5079 votos)
-9 - EDSON MOURA SAMPAIO MELO / EDSON MELO (PSDB, 5012 votos)
-10 - LUIS ANDRE DE ARRUDA MONT ALVERNE / LUIS ANDRE (PSL, 4815 votos)
-11 - ALU√çSIO PARENTES SAMPAIO NETO / ALU√çSIO SAMPAIO (PP, 4712 votos)
-12 - LEONARDO EULALIO DE ARAUJO LIMA / DR LEONARDO EULALIO (PL, 4597 votos)
-13 - TERESINHA DE SOUSA MEDEIROS SANTOS / TERESINHA MEDEIROS (PSL, 4551 votos)
-14 - JOS√â VEN√ÇNCIO CARDOSO NETO / VEN√ÇNCIO (PSDB, 4523 votos)
-15 - VALDEMIR SIVIRINO VIRGINO / VALDEMIR VIRGINO (PP, 4484 votos)
-16 - JOSE GOMES DA SILVA FILHO / Z√â FILHO (PSL, 4378 votos)
-17 - ENZO SAMUEL ALENCAR SILVA / ENZO SAMUEL (PDT, 4342 votos)
-18 - JAMES GUERRA J√öNIOR / DELEGADO JAMES GUERRA (PSB, 4307 votos)
-19 - MANOEL BEZERRA DA SILVA NETO / NETO DO ANGELIM (PP, 4103 votos)
-20 - JOS√â NITO DE OLIVEIRA SOUSA / PROFESSOR Z√â NITO (MDB, 4095 votos)
-21 - MARIA DAS GRA√áAS DA SILVA AMORIM / GRA√áA AMORIM (PP, 4039 votos)
-22 - IN√ÅCIO HENRIQUE CARVALHO / IN√ÅCIO CARVALHO (PP, 4034 votos)
-23 - DEOLINDO MOURA NETO / DEOLINDO MOURA (PT, 3995 votos)
-24 - √çTALO PALMEIRA DIAS DO R√äGO BARROS / √çTALO BARROS (PSDB, 3864 votos)
-25 - EDILBERTO BORGES DE OLIVEIRA / DUDU (PT, 3860 votos)
-26 - LUIZ GONZAGA LOB√ÉO CASTELO BRANCO / DR LUIZ LOB√ÉO (MDB, 3774 votos)
-27 - JOAQUIM SILVIO CALDAS FILHO / JOAQUIM DO ARROZ (MDB, 3534 votos)
-28 - ELZUILA ALVES CALISTO / ELZUILA CALISTO (PT, 3530 votos)
-29 - PAULO ROBERTO PEREIRA DANTAS / PAULO DANTAS (PSDB, 3453 votos)
+1 - DENNER JANU¡RIO DA SILVA / DENNINHO SILVA (CIDADANIA, 7213 votos)
+2 - CAMILA COSTA VALAD√O / CAMILA VALAD√O (PSOL, 5625 votos)
+3 - DAVI ESMAEL MENEZES DE ALMEIDA / DAVI ESMAEL (PSD, 3408 votos)
+4 - LUIZ EMANUEL ZOUAIN DA ROCHA / LUIZ EMANUEL (CIDADANIA, 3105 votos)
+5 - LEANDRO PIQUET DE AZEREDO BASTOS / DELEGADO PIQUET (REPUBLICANOS, 2364 votos)
+6 - MAURICIO SOARES  LEITE / MAURICIO LEITE (CIDADANIA, 2247 votos)
+7 - VINÕCIUS JOS… SIM’ES / VINICIUS SIM’ES (CIDADANIA, 2104 votos)
+8 - KARLA SILVA COSER / KARLA COSER (PT, 1961 votos)
+9 - LUIZ PAULO RODRIGUES DE AMORIM / LUIZ PAULO AMORIM (PV, 1952 votos)
+10 - JOCELINO DA CONCEI«√O SILVA JUNIOR / JOCELINO JUNIOR (PT, 1941 votos)
+11 - LEONIL DIAS DA SILVA / LEONIL (CIDADANIA, 1810 votos)
+12 - AGUINALDO ROCHA DE SOUZA / PROFESSOR AGUINALDO (PT, 1790 votos)
+13 - ANDERSON GOGGI RODRIGUES / ANDERSON GOGGI (PTB, 1736 votos)
+14 - ORLANDINO RODRIGUES DE SOUZA / BAIANO DO SAL√O (PTB, 1723 votos)
+15 - VITOR BURGO / VITOR BURGO (REDE, 1717 votos)
 
 Teriam sido eleitos se a vota√ß√£o fosse majorit√°ria, e n√£o foram eleitos:
 (com sua posi√ß√£o no ranking de mais votados)
-6 - CAIO LUSTOSA BUCAR / CAIO BUCAR (REPUBLICANOS, 5609 votos)
-7 - GUSTAVO SOUZA DE ALMENDRA GAIOSO / GUSTAVO GAIOSO (SOLIDARIEDADE, 5240 votos)
-16 - JOSE GOMES DA SILVA FILHO / Z√â FILHO (PSL, 4378 votos)
-18 - JAMES GUERRA J√öNIOR / DELEGADO JAMES GUERRA (PSB, 4307 votos)
-21 - MARIA DAS GRA√áAS DA SILVA AMORIM / GRA√áA AMORIM (PP, 4039 votos)
-22 - IN√ÅCIO HENRIQUE CARVALHO / IN√ÅCIO CARVALHO (PP, 4034 votos)
-24 - √çTALO PALMEIRA DIAS DO R√äGO BARROS / √çTALO BARROS (PSDB, 3864 votos)
-27 - JOAQUIM SILVIO CALDAS FILHO / JOAQUIM DO ARROZ (MDB, 3534 votos)
-29 - PAULO ROBERTO PEREIRA DANTAS / PAULO DANTAS (PSDB, 3453 votos)
+7 - VINÕCIUS JOS… SIM’ES / VINICIUS SIM’ES (CIDADANIA, 2104 votos)
+10 - JOCELINO DA CONCEI«√O SILVA JUNIOR / JOCELINO JUNIOR (PT, 1941 votos)
+11 - LEONIL DIAS DA SILVA / LEONIL (CIDADANIA, 1810 votos)
+12 - AGUINALDO ROCHA DE SOUZA / PROFESSOR AGUINALDO (PT, 1790 votos)
+14 - ORLANDINO RODRIGUES DE SOUZA / BAIANO DO SAL√O (PTB, 1723 votos)
+15 - VITOR BURGO / VITOR BURGO (REDE, 1717 votos)
 
 Eleitos, que se beneficiaram do sistema proporcional:
 (com sua posi√ß√£o no ranking de mais votados)
-33 - THANANDRA STEFANI BORGES LIMA FELIX / THANANDRA SARAPATINHAS (PATRIOTA, 3156 votos)
-36 - POLLYANNA KECCY VIEIRA DA ROCHA / POLLYANNA ROCHA (PV, 3033 votos)
-38 - ISMAEL DO NASCIMENTO SILVA / ISMAEL SILVA (PSD, 2937 votos)
-41 - VINICIO RONDINELLE FERREIRA MAGALHAES / VINICIO FERREIRA (AVANTE, 2589 votos)
-42 - ALAN BRAND√ÉO DOS SANTOS SOUSA / ALAN BRAND√ÉO (PDT, 2564 votos)
-43 - RENATO PIRES BERGER / RENATO BERGER (PSD, 2504 votos)
-56 - BRUNO GALISA VILARINHO SOARES / BRUNO VILARINHO (PTB, 2104 votos)
-58 - MARCOS VENICIUS MEDEIROS COSTA FILHO / MARKIM COSTA (DEM, 2062 votos)
-74 - ROBERVAL AZEVEDO QUEIROZ / CAPIT√ÉO ROBERVAL QUEIROZ (DEM, 1590 votos)
+16 - ANDR… BRANDINO PEGO / ANDR… BRANDINO (PSC, 1693 votos)
+20 - ANTONIO EDUARDO OLIVEIRA SANTOS / DUDA BRASIL (PSL, 1567 votos)
+21 - GILVAN AGUIAR COSTA / GILVAN PATRIOTA (PATRIOTA, 1560 votos)
+28 - ADALTO BASTOS DAS NEVES / DALTO NEVES (PDT, 1300 votos)
+30 - ARMANDO FONTOURA BORGES FILHO / ARMANDINHO FONTOURA (PODE, 1264 votos)
+31 - ALOÕSIO VAREJ√O / ALOÕSIO VAREJ√O (PSB, 1239 votos)
 
 Vota√ß√£o dos partidos e n√∫mero de candidatos eleitos:
-1 - PSDB - 45, 41569 votos (38286 nominais e 3283 de legenda) , 4 candidatos eleitos
-2 - PP - 11, 39799 votos (38793 nominais e 1006 de legenda) , 3 candidatos eleitos
-3 - MDB - 15, 38857 votos (33291 nominais e 5566 de legenda) , 3 candidatos eleitos
-4 - PT - 13, 35063 votos (32894 nominais e 2169 de legenda) , 3 candidatos eleitos
-5 - PDT - 12, 34507 votos (33254 nominais e 1253 de legenda) , 3 candidatos eleitos
-6 - PSL - 17, 27385 votos (26997 nominais e 388 de legenda) , 2 candidatos eleitos
-7 - PSD - 55, 23145 votos (22609 nominais e 536 de legenda) , 2 candidatos eleitos
-8 - DEM - 25, 20136 votos (19838 nominais e 298 de legenda) , 2 candidatos eleitos
-9 - SOLIDARIEDADE - 77, 18738 votos (18433 nominais e 305 de legenda) , 1 candidatos eleitos
-10 - PTB - 14, 17096 votos (16772 nominais e 324 de legenda) , 1 candidatos eleitos
-11 - PL - 22, 16941 votos (15730 nominais e 1211 de legenda) , 1 candidatos eleitos
-12 - REPUBLICANOS - 10, 15938 votos (15653 nominais e 285 de legenda) , 1 candidatos eleitos
-13 - PMB - 35, 15234 votos (15027 nominais e 207 de legenda) , 0 candidatos eleitos
-14 - AVANTE - 70, 14645 votos (14447 nominais e 198 de legenda) , 1 candidatos eleitos
-15 - PV - 43, 12164 votos (12004 nominais e 160 de legenda) , 1 candidatos eleitos
-16 - PATRIOTA - 51, 10184 votos (9681 nominais e 503 de legenda) , 1 candidatos eleitos
-17 - PSB - 40, 9036 votos (8909 nominais e 127 de legenda) , 0 candidatos eleitos
-18 - PMN - 33, 8745 votos (8569 nominais e 176 de legenda) , 0 candidatos eleitos
-19 - PC do B - 65, 8709 votos (8590 nominais e 119 de legenda) , 0 candidatos eleitos
-20 - PSC - 20, 3878 votos (3240 nominais e 638 de legenda) , 0 candidatos eleitos
-21 - PSOL - 50, 3681 votos (3258 nominais e 423 de legenda) , 0 candidatos eleitos
-22 - PROS - 90, 1879 votos (1821 nominais e 58 de legenda) , 0 candidatos eleitos
-23 - PRTB - 28, 1274 votos (1244 nominais e 30 de legenda) , 0 candidatos eleitos
-24 - REDE - 18, 954 votos (920 nominais e 34 de legenda) , 0 candidatos eleitos
-25 - NOVO - 30, 876 votos (810 nominais e 66 de legenda) , 0 candidatos eleitos
-26 - PODE - 19, 284 votos (201 nominais e 83 de legenda) , 0 candidatos eleitos
-27 - UP - 80, 272 votos (245 nominais e 27 de legenda) , 0 candidatos eleitos
+1 - CIDADANIA - 23, 22973 votos (21775 nominais e 1198 de legenda) , 3 candidatos eleitos
+2 - PT - 13, 12927 votos (11060 nominais e 1867 de legenda) , 1 candidatos eleitos
+3 - PSD - 55, 12288 votos (11978 nominais e 310 de legenda) , 1 candidatos eleitos
+4 - REPUBLICANOS - 10, 11198 votos (9785 nominais e 1413 de legenda) , 1 candidatos eleitos
+5 - PATRIOTA - 51, 10028 votos (9560 nominais e 468 de legenda) , 1 candidatos eleitos
+6 - PSC - 20, 9452 votos (9342 nominais e 110 de legenda) , 1 candidatos eleitos
+7 - PV - 43, 9439 votos (9327 nominais e 112 de legenda) , 1 candidatos eleitos
+8 - PSL - 17, 9106 votos (8971 nominais e 135 de legenda) , 1 candidatos eleitos
+9 - PTB - 14, 8899 votos (8696 nominais e 203 de legenda) , 1 candidatos eleitos
+10 - PODE - 19, 8685 votos (8574 nominais e 111 de legenda) , 1 candidatos eleitos
+11 - PDT - 12, 8566 votos (8257 nominais e 309 de legenda) , 1 candidatos eleitos
+12 - PSB - 40, 8445 votos (8097 nominais e 348 de legenda) , 1 candidatos eleitos
+13 - PSOL - 50, 7054 votos (6837 nominais e 217 de legenda) , 1 candidatos eleitos
+14 - REDE - 18, 5579 votos (5476 nominais e 103 de legenda) , 0 candidatos eleitos
+15 - PSDB - 45, 4533 votos (4041 nominais e 492 de legenda) , 0 candidatos eleitos
+16 - NOVO - 30, 4107 votos (3709 nominais e 398 de legenda) , 0 candidatos eleitos
+17 - PMB - 35, 4018 votos (3975 nominais e 43 de legenda) , 0 candidatos eleitos
+18 - DEM - 25, 3813 votos (3748 nominais e 65 de legenda) , 0 candidatos eleitos
+19 - PP - 11, 2455 votos (2319 nominais e 136 de legenda) , 0 candidatos eleitos
+20 - MDB - 15, 1771 votos (1618 nominais e 153 de legenda) , 0 candidatos eleitos
+21 - PMN - 33, 964 votos (924 nominais e 40 de legenda) , 0 candidatos eleitos
+22 - PRTB - 28, 907 votos (883 nominais e 24 de legenda) , 0 candidatos eleitos
+23 - SOLIDARIEDADE - 77, 646 votos (625 nominais e 21 de legenda) , 0 candidatos eleitos
+24 - PC do B - 65, 515 votos (473 nominais e 42 de legenda) , 0 candidatos eleitos
+25 - PTC - 36, 101 votos (90 nominais e 11 de legenda) , 0 candidatos eleitos
+26 - PCO - 29, 0 votos (0 nominais e 0 de legenda) , 0 candidatos eleitos
+
+Primeiro e √∫ltimo colocados de cada partido:

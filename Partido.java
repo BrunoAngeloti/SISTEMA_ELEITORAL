@@ -6,6 +6,7 @@ public class Partido implements Comparable<Partido>{
     private int votos_nominais;
     private int votos_total;
     private int cand_eleitos;
+    private Candidato candidatos[];
 
     public Partido(int numero_partido, int votos_legenda, String nome_partido, String sigla_partido){
         setNumero_partido(numero_partido);
@@ -59,7 +60,7 @@ public class Partido implements Comparable<Partido>{
     public void setCand_eleitos(int cand_eleitos) {
         this.cand_eleitos = cand_eleitos;
     }
-
+    
     public boolean comparaPartido(int numeroId){
         if(this.numero_partido == numeroId){
             return true;

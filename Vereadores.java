@@ -39,6 +39,16 @@ class Vereadores{
             }
         }
 
+        // AQUI QUE IREMOS ARMAZENAR OS CANDIDATOS EM CADA PARTIDOS.
+        for(int i=0; i < partidos.length; i++){
+            for(int j=0; j < candidatos.length; j++){
+                if(candidatos[j].comparaPartido(partidos[i].getNumero_partido)){
+                    // Armazenar candidato dentro do vetor de candidatos do partido
+                }
+                
+            }
+        }
+
         Arrays.sort(candidatos); // organiza os candidatos por ordem de mais votados
 
         //-------------------ANALISA CANDIDATOS--------------------
@@ -147,7 +157,7 @@ class Vereadores{
         // Primeiro e último colocados de cada partido
 
         for(int i = 0; i < partidos.length; i++){
-            int k = 0;
+            k = 0;
             for(int j = 0; j < candidatos.length; j++){
                 if(partidos[i].comparaPartido(candidatos[j].getNumero_partido()) && k == 0){
                            

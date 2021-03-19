@@ -144,6 +144,17 @@ class Vereadores{
         }
 
 
+        // Primeiro e último colocados de cada partido
+
+        for(int i = 0; i < partidos.length; i++){
+            int k = 0;
+            for(int j = 0; j < candidatos.length; j++){
+                if(partidos[i].comparaPartido(candidatos[j].getNumero_partido()) && k == 0){
+                           
+                }
+            }
+        }
+
         //------------------------IMPRESSÕES DO CÓDIGO-------------------------
 
 
@@ -189,6 +200,9 @@ class Vereadores{
         for(int i = 0; i < partidos.length; i++){
             saida.println((i + 1) + " - " + partidos[i].toString());
         }
+
+        saida.println("\nPrimeiro e último colocados de cada partido:");
+
         
         saida.close(); // fecha o arquivo salvando o conteúdo
     }

@@ -3,7 +3,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.PrintWriter;
 
-class arquivo{
+class Arquivo{
     File saida;
 
     public PrintWriter permiteImpressaoSaida() throws IOException{

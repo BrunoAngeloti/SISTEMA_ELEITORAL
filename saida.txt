@@ -53,29 +53,29 @@ Eleitos, que se beneficiaram do sistema proporcional:
 31 - ALOÕSIO VAREJ√O / ALOÕSIO VAREJ√O (PSB, 1239 votos)
 
 Vota√ß√£o dos partidos e n√∫mero de candidatos eleitos:
-1 - CIDADANIA - 23, 22973 votos (21775 nominais e 1198 de legenda) 3 candidatos eleitos
-2 - PT - 13, 12927 votos (11060 nominais e 1867 de legenda) 1 candidatos eleitos
-3 - PSD - 55, 12288 votos (11978 nominais e 310 de legenda) 1 candidatos eleitos
-4 - REPUBLICANOS - 10, 11198 votos (9785 nominais e 1413 de legenda) 1 candidatos eleitos
-5 - PATRIOTA - 51, 10028 votos (9560 nominais e 468 de legenda) 1 candidatos eleitos
-6 - PSC - 20, 9452 votos (9342 nominais e 110 de legenda) 1 candidatos eleitos
-7 - PV - 43, 9439 votos (9327 nominais e 112 de legenda) 1 candidatos eleitos
-8 - PSL - 17, 9106 votos (8971 nominais e 135 de legenda) 1 candidatos eleitos
-9 - PTB - 14, 8899 votos (8696 nominais e 203 de legenda) 1 candidatos eleitos
-10 - PODE - 19, 8685 votos (8574 nominais e 111 de legenda) 1 candidatos eleitos
-11 - PDT - 12, 8566 votos (8257 nominais e 309 de legenda) 1 candidatos eleitos
-12 - PSB - 40, 8445 votos (8097 nominais e 348 de legenda) 1 candidatos eleitos
-13 - PSOL - 50, 7054 votos (6837 nominais e 217 de legenda) 1 candidatos eleitos
-14 - REDE - 18, 5579 votos (5476 nominais e 103 de legenda) 0 candidatos eleitos
-15 - PSDB - 45, 4533 votos (4041 nominais e 492 de legenda) 0 candidatos eleitos
-16 - NOVO - 30, 4107 votos (3709 nominais e 398 de legenda) 0 candidatos eleitos
-17 - PMB - 35, 4018 votos (3975 nominais e 43 de legenda) 0 candidatos eleitos
-18 - DEM - 25, 3813 votos (3748 nominais e 65 de legenda) 0 candidatos eleitos
-19 - PP - 11, 2455 votos (2319 nominais e 136 de legenda) 0 candidatos eleitos
-20 - MDB - 15, 1771 votos (1618 nominais e 153 de legenda) 0 candidatos eleitos
-21 - PMN - 33, 964 votos (924 nominais e 40 de legenda) 0 candidatos eleitos
-22 - PRTB - 28, 907 votos (883 nominais e 24 de legenda) 0 candidatos eleitos
-23 - SOLIDARIEDADE - 77, 646 votos (625 nominais e 21 de legenda) 0 candidatos eleitos
-24 - PC do B - 65, 515 votos (473 nominais e 42 de legenda) 0 candidatos eleitos
-25 - PTC - 36, 101 votos (90 nominais e 11 de legenda) 0 candidatos eleitos
-26 - PCO - 29, 0 votos (0 nominais e 0 de legenda) 0 candidatos eleitos
+1 - CIDADANIA - 23, 22973 votos (21775 nominais e 1198 de legenda) , 3 candidatos eleitos
+2 - PT - 13, 12927 votos (11060 nominais e 1867 de legenda) , 1 candidatos eleitos
+3 - PSD - 55, 12288 votos (11978 nominais e 310 de legenda) , 1 candidatos eleitos
+4 - REPUBLICANOS - 10, 11198 votos (9785 nominais e 1413 de legenda) , 1 candidatos eleitos
+5 - PATRIOTA - 51, 10028 votos (9560 nominais e 468 de legenda) , 1 candidatos eleitos
+6 - PSC - 20, 9452 votos (9342 nominais e 110 de legenda) , 1 candidatos eleitos
+7 - PV - 43, 9439 votos (9327 nominais e 112 de legenda) , 1 candidatos eleitos
+8 - PSL - 17, 9106 votos (8971 nominais e 135 de legenda) , 1 candidatos eleitos
+9 - PTB - 14, 8899 votos (8696 nominais e 203 de legenda) , 1 candidatos eleitos
+10 - PODE - 19, 8685 votos (8574 nominais e 111 de legenda) , 1 candidatos eleitos
+11 - PDT - 12, 8566 votos (8257 nominais e 309 de legenda) , 1 candidatos eleitos
+12 - PSB - 40, 8445 votos (8097 nominais e 348 de legenda) , 1 candidatos eleitos
+13 - PSOL - 50, 7054 votos (6837 nominais e 217 de legenda) , 1 candidatos eleitos
+14 - REDE - 18, 5579 votos (5476 nominais e 103 de legenda) , 0 candidatos eleitos
+15 - PSDB - 45, 4533 votos (4041 nominais e 492 de legenda) , 0 candidatos eleitos
+16 - NOVO - 30, 4107 votos (3709 nominais e 398 de legenda) , 0 candidatos eleitos
+17 - PMB - 35, 4018 votos (3975 nominais e 43 de legenda) , 0 candidatos eleitos
+18 - DEM - 25, 3813 votos (3748 nominais e 65 de legenda) , 0 candidatos eleitos
+19 - PP - 11, 2455 votos (2319 nominais e 136 de legenda) , 0 candidatos eleitos
+20 - MDB - 15, 1771 votos (1618 nominais e 153 de legenda) , 0 candidatos eleitos
+21 - PMN - 33, 964 votos (924 nominais e 40 de legenda) , 0 candidatos eleitos
+22 - PRTB - 28, 907 votos (883 nominais e 24 de legenda) , 0 candidatos eleitos
+23 - SOLIDARIEDADE - 77, 646 votos (625 nominais e 21 de legenda) , 0 candidatos eleitos
+24 - PC do B - 65, 515 votos (473 nominais e 42 de legenda) , 0 candidatos eleitos
+25 - PTC - 36, 101 votos (90 nominais e 11 de legenda) , 0 candidatos eleitos
+26 - PCO - 29, 0 votos (0 nominais e 0 de legenda) , 0 candidatos eleitos

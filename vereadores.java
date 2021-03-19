@@ -6,10 +6,10 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
-class vereadores{
+class Vereadores{
 
     public static void main (String[] args) throws IOException{
-        arquivo arq = new arquivo(); // instancia um objeto do tipo arquivo 
+        Arquivo arq = new Arquivo(); // instancia um objeto do tipo arquivo 
         PrintWriter saida; // cria um objeto da classe PrintWriter que permite escrever no arquivo
  
         // Lê arquivo de candidatos e coloca dentro de uma lista de Candidatos

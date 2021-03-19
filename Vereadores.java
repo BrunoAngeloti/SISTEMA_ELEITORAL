@@ -71,7 +71,7 @@ class Vereadores{
                     // o candidato foi beneficiado
                 }
 
-                // Ce chega no final do for, significa que o candidato eleito não está nos mais votados
+                // Se chega no final do for, significa que o candidato eleito não está nos mais votados
                 if(j == (candidatosEleitos.length - 1)) { 
                     qtdBeneficiados++;  // logo ele foi não foi beneficiado e soma 1
                 }                   

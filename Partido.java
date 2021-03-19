@@ -78,7 +78,7 @@ public class Partido implements Comparable<Partido>{
     }
     
     public String toString(){
-        return this.sigla_partido + " - " + this.numero_partido + ", " + this.getVotos_total() + " votos (" + this.getVotos_nominais() + " nominais e " + this.getVotos_legenda() + " de legenda) " + this.getCand_eleitos() +" candidatos eleitos";
+        return this.sigla_partido + " - " + this.numero_partido + ", " + this.getVotos_total() + " votos (" + this.getVotos_nominais() + " nominais e " + this.getVotos_legenda() + " de legenda) " + ", " + this.getCand_eleitos() +" candidatos eleitos";
     }
     
 }

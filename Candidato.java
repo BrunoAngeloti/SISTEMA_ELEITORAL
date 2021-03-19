@@ -83,7 +83,7 @@ public class Candidato implements Comparable<Candidato>{
     public String toString(Partido[] part){
         for(int i = 0; i < part.length; i++){
             if(part[i].comparaPartido(this.numero_partido)){
-                return this.nome + " / " + this.nome_urna + " (" + part[i].getNome_partido() + ", " + Integer.toString(this.votos_nominais) + " votos)";
+                return this.nome + " / " + this.nome_urna + " (" + part[i].getSigla_partido() + ", " + Integer.toString(this.votos_nominais) + " votos)";
             }
         }
         return "erro";

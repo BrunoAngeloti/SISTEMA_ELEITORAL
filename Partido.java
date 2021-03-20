@@ -6,7 +6,6 @@ public class Partido implements Comparable<Partido>{
     private int votos_nominais;
     private int votos_total;
     private int cand_eleitos;
-    private Candidato candidatos[];
 
     public Partido(int numero_partido, int votos_legenda, String nome_partido, String sigla_partido){
         setNumero_partido(numero_partido);

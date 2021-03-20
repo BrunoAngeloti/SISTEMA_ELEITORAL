@@ -3,6 +3,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.io.PrintWriter;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -36,16 +37,6 @@ class Vereadores{
         for(int i = 0; i < candidatos.length; i++){ 
             if(candidatos[i].identificaEleitos()){ 
                 qtdEleitos++;
-            }
-        }
-
-        // AQUI QUE IREMOS ARMAZENAR OS CANDIDATOS EM CADA PARTIDOS.
-        for(int i=0; i < partidos.length; i++){
-            for(int j=0; j < candidatos.length; j++){
-                if(candidatos[j].comparaPartido(partidos[i].getNumero_partido)){
-                    // Armazenar candidato dentro do vetor de candidatos do partido
-                }
-                
             }
         }
 
@@ -155,16 +146,36 @@ class Vereadores{
 
 
         // Primeiro e último colocados de cada partido
+        Candidato Primeiros[] = new Candidato[partidos.length];
+        Candidato Ultimos[] = new Candidato[partidos.length];
+        k = 0;
 
+        //Armazenando o primeiro candidato de cada partido
         for(int i = 0; i < partidos.length; i++){
-            k = 0;
             for(int j = 0; j < candidatos.length; j++){
-                if(partidos[i].comparaPartido(candidatos[j].getNumero_partido()) && k == 0){
-                           
+                if(partidos[i].comparaPartido(candidatos[j].getNumero_partido())){
+                    Primeiros[k] = candidatos[j];  
+                    k++;
+                    break;       
                 }
             }
         }
 
+        Arrays.sort(Primeiros);
+        k=0;
+
+        //Armazenando o ultimo candidato de cada partido
+        for(int i=0; i < Primeiros.length; i++){
+            for(int j = (candidatos.length - 1); j >= 0; j--){
+                if(Primeiros[i].comparaNumPartido(candidatos[j].getNumero_partido())){
+                    Ultimos[k] = candidatos[j]; 
+                    k++;    
+                    break;     
+                }
+            }
+        }
+        
+        
         //------------------------IMPRESSÕES DO CÓDIGO-------------------------
 
 
@@ -213,6 +224,14 @@ class Vereadores{
 
         saida.println("\nPrimeiro e último colocados de cada partido:");
 
+        String maisVotadosMenosVotado;
+        for(int i = 0, j = 1; i < Primeiros.length; i++){
+            maisVotadosMenosVotado = Primeiros[i].toString(partidos, Ultimos[i].getNome_urna(), Ultimos[i].getNumero(), Ultimos[i].getVotos_nominais());
+            if(!(maisVotadosMenosVotado.equals("erro"))){
+                saida.println((j) + " - " + maisVotadosMenosVotado);
+                j++;
+            }
+        } 
         
         saida.close(); // fecha o arquivo salvando o conteúdo
     }

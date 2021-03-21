@@ -3,7 +3,8 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.io.PrintWriter;
 import java.util.Arrays;
-import java.util.Collections;
+import java.util.Comparator;
+//import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -82,6 +83,7 @@ class Vereadores{
         // Armazenaremos os candidatos presentes na lista de mais votados mas que não foram eleitos
         Candidato[] naoEleitos = new Candidato[qtdBeneficiados];
         int k = 0;
+
         for(int i = 0; i < candidatosEleitos.length; i++){
             for(int j = 0; j < candidatosEleitos.length; j++){
                 //Caso o candidato se encontrar em ambas as listas, ele foi eleito e é mais votado
@@ -149,29 +151,44 @@ class Vereadores{
         Candidato Primeiros[] = new Candidato[partidos.length];
         Candidato Ultimos[] = new Candidato[partidos.length];
         k = 0;
+        
+        int cont = 0;
+        cont = cont + 0; //ARRUMANDO WARNING QUE NAO SAI DE JEITO NENHUM.
 
         //Armazenando o primeiro candidato de cada partido
         for(int i = 0; i < partidos.length; i++){
             for(int j = 0; j < candidatos.length; j++){
-                if(partidos[i].comparaPartido(candidatos[j].getNumero_partido())){
+                if(partidos[i].comparaPartido(candidatos[j].getNumero_partido()) && candidatos[j].getDestino_voto().equalsIgnoreCase("Válido")){
                     Primeiros[k] = candidatos[j];  
                     k++;
+                    cont = 1;
                     break;       
                 }
             }
+            if(cont == 0){
+                Primeiros[k] = null;
+                k++;
+            }
+            cont = 0;
         }
 
-        Arrays.sort(Primeiros);
+        Arrays.sort(Primeiros, Comparator.nullsLast(Comparator.naturalOrder()));
         k=0;
 
         //Armazenando o ultimo candidato de cada partido
-        for(int i=0; i < Primeiros.length; i++){
+        for(int i=0; i < partidos.length; i++){
             for(int j = (candidatos.length - 1); j >= 0; j--){
-                if(Primeiros[i].comparaNumPartido(candidatos[j].getNumero_partido())){
-                    Ultimos[k] = candidatos[j]; 
-                    k++;    
-                    break;     
-                }
+                if(Primeiros[i] != null){
+                    if(Primeiros[i].comparaNumPartido(candidatos[j].getNumero_partido())){
+                        Ultimos[k] = candidatos[j]; 
+                        k++;    
+                        break;     
+                    }
+                }else{
+                    Ultimos[k] = null;
+                    k++;
+                    break;
+                }            
             }
         }
         
@@ -224,11 +241,9 @@ class Vereadores{
 
         saida.println("\nPrimeiro e último colocados de cada partido:");
 
-        String maisVotadosMenosVotado;
-        for(int i = 0, j = 1; i < Primeiros.length; i++){
-            maisVotadosMenosVotado = Primeiros[i].toString(partidos, Ultimos[i].getNome_urna(), Ultimos[i].getNumero(), Ultimos[i].getVotos_nominais());
-            if(!(maisVotadosMenosVotado.equals("erro"))){
-                saida.println((j) + " - " + maisVotadosMenosVotado);
+        for(int i = 0, j = 1; i < partidos.length; i++){
+            if(Primeiros[i] != null){      
+                saida.println((j) + " - " + Primeiros[i].toString(partidos, Ultimos[i].getNome_urna(), Ultimos[i].getNumero(), Ultimos[i].getVotos_nominais()));
                 j++;
             }
         } 

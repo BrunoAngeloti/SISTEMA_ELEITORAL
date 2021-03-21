@@ -91,12 +91,8 @@ public class Candidato implements Comparable<Candidato>{
 
     public String toString(Partido[] part, String nome, int num, int votos){
         for(int i = 0; i < part.length; i++){
-            if(part[i].comparaPartido(this.numero_partido)){
-                if(part[i].getVotos_legenda() > 0){
-                    return part[i].getSigla_partido() + " - " + this.numero_partido + ", " + this.nome_urna + " (" + this.numero + ", " + this.votos_nominais +" votos) / " + nome + " (" + num + ", " + votos + " votos)";
-                }else{
-                    return "erro";
-                }
+            if(part[i].comparaPartido(this.numero_partido)){            
+                return part[i].getSigla_partido() + " - " + this.numero_partido + ", " + this.nome_urna + " (" + this.numero + ", " + this.votos_nominais +" votos) / " + nome + " (" + num + ", " + votos + " votos)";
             }
         }
         return "erro";
@@ -105,18 +101,21 @@ public class Candidato implements Comparable<Candidato>{
 
     @Override
     public int compareTo(Candidato cand) {
-        if(this.votos_nominais > cand.getVotos_nominais()){
-            return -1;
-        }
-        else if(this.votos_nominais < cand.getVotos_nominais()){
-            return 1;
-        }else{
-            if(this.numero_partido < cand.getNumero_partido()){
+        if(cand != null){
+            if(this.votos_nominais > cand.getVotos_nominais()){
                 return -1;
-            }else{
+            }
+            else if(this.votos_nominais < cand.getVotos_nominais()){
                 return 1;
+            }else{
+                if(this.numero_partido < cand.getNumero_partido()){
+                    return -1;
+                }else{
+                    return 1;
+                }
             }
         }
+        return 0;
     }
 
     public boolean comparaNumPartido(int numeroId){

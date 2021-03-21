@@ -8,9 +8,7 @@ class Arquivo{
 
     public PrintWriter permiteImpressaoSaida() throws IOException{
         this.saida = new File("saida.txt");
-        if(this.saida.createNewFile()){
-            System.out.println("Sucesso");
-        }
+        
         FileWriter fw = new FileWriter(saida, false);
         PrintWriter pw = new PrintWriter(fw);
 

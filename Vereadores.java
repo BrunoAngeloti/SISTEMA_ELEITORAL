@@ -4,7 +4,6 @@ import java.nio.file.Paths;
 import java.io.PrintWriter;
 import java.util.Arrays;
 import java.util.Comparator;
-//import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -179,7 +178,7 @@ class Vereadores{
         for(int i=0; i < partidos.length; i++){
             for(int j = (candidatos.length - 1); j >= 0; j--){
                 if(Primeiros[i] != null){
-                    if(Primeiros[i].comparaNumPartido(candidatos[j].getNumero_partido())){
+                    if(Primeiros[i].comparaNumPartido(candidatos[j].getNumero_partido()) && candidatos[j].getDestino_voto().equalsIgnoreCase("Válido")){
                         Ultimos[k] = candidatos[j]; 
                         k++;    
                         break;     
@@ -199,24 +198,29 @@ class Vereadores{
         saida = arq.permiteImpressaoSaida(); // retorna um objeto do tipo PW que permite escrever no arquivo de 
         
         saida.println("Número de vagas: " + qtdEleitos + "\n\n" + "Vereadores eleitos:");
-
+        
         //OK
         for(int i = 0; i < candidatosEleitos.length; i++){
             saida.println((i+1) + " - " + candidatosEleitos[i].toString(partidos));
+           
         } 
 
         //OK
         saida.println("\nCandidatos mais votados (em ordem decrescente de votação e respeitando número de vagas):");
+        
         for(int i = 0; i < maisVotados.length; i++){
             saida.println((i+1) + " - " + maisVotados[i].toString(partidos));
+            
         } 
 
         //OK    
         saida.println("\nTeriam sido eleitos se a votação fosse majoritária, e não foram eleitos:\n(com sua posição no ranking de mais votados)");
+       
         for(int i = 0; i < naoEleitos.length; i++){
             for(int j = 0; j < maisVotados.length; j++){
                 if(maisVotados[j].getNome().equals(naoEleitos[i].getNome())){
                     saida.println((j+1) + " - " + naoEleitos[i].toString(partidos));
+                    
                     break;
                 }
             }
@@ -224,28 +228,31 @@ class Vereadores{
 
         //OK
         saida.println("\nEleitos, que se beneficiaram do sistema proporcional:\n(com sua posição no ranking de mais votados)");
+        
         for(int i = 0; i < beneficiados.length; i++){
             for(int j = 0; j < candidatos.length; j++){
                 if(beneficiados[i].getNome().equals(candidatos[j].getNome())){
                     saida.println((j+1) + " - " + beneficiados[i].toString(partidos));
+                    
                     break;
                 }
             }
         }
 
         //OK
-        saida.println("\nVotação dos partidos e número de candidatos eleitos:");
+       saida.println("\nVotação dos partidos e número de candidatos eleitos:");
+        
         for(int i = 0; i < partidos.length; i++){
-            saida.println((i + 1) + " - " + partidos[i].toString());
+            saida.println((i + 1) + " - " + partidos[i].toString());         
         }
 
         saida.println("\nPrimeiro e último colocados de cada partido:");
-
-        for(int i = 0, j = 1; i < partidos.length; i++){
-            if(Primeiros[i] != null){      
-                saida.println((j) + " - " + Primeiros[i].toString(partidos, Ultimos[i].getNome_urna(), Ultimos[i].getNumero(), Ultimos[i].getVotos_nominais()));
-                j++;
-            }
+       
+        for(int m = 0, n = 1; m < Primeiros.length; m++){
+            if(Primeiros[m] != null && Ultimos[m] != null){      
+                saida.println(n + " - " + Primeiros[m].toString(partidos, Ultimos[m].getNome_urna(), Ultimos[m].getNumero(), Ultimos[m].getVotos_nominais()));
+                n++;      
+            }         
         } 
         
         saida.close(); // fecha o arquivo salvando o conteúdo

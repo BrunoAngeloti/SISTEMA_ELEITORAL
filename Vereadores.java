@@ -6,7 +6,35 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
+
 class Vereadores{
+
+    public static int retornaQtdEleitos(Candidato[] cand){
+        int aux = 0;
+        for(int i = 0; i < cand.length; i++){ 
+            if(cand[i].identificaEleitos()){ 
+                aux++;
+            }
+        }
+        return aux;
+    }
+
+    public static int retornaQtdBeneficiados(Candidato[] candEleitos, Candidato[] maisVotados){
+        int aux = 0;
+        for(int i = 0; i < candEleitos.length; i++){
+            for(int j = 0; j < candEleitos.length; j++){
+                // Se o candidato está presente nas duas listas
+                if(maisVotados[j].getNome().equals(candEleitos[i].getNome())){              
+                    break; 
+                }
+                // Se chega no final do for, significa que o candidato eleito não está nos mais votados
+                if(j == (candEleitos.length - 1)) { 
+                    aux++;  // logo ele foi não foi beneficiado e soma 1
+                }                   
+            }          
+        }
+        return aux;
+    }
 
     public static void main (String[] args) throws IOException{
         Arquivo arq = new Arquivo(); // instancia um objeto do tipo arquivo 
@@ -30,16 +58,11 @@ class Vereadores{
         Candidato[] candidatos = candAux.toArray(new Candidato[candAux.size()]);
         Partido[] partidos = partAux.toArray(new Partido[partAux.size()]);    
 
-        int qtdEleitos = 0;
-
-        // Conta o número de candidatos eleitos
-        for(int i = 0; i < candidatos.length; i++){ 
-            if(candidatos[i].identificaEleitos()){ 
-                qtdEleitos++;
-            }
-        }
-
-        Arrays.sort(candidatos); // organiza os candidatos por ordem de mais votados
+        // Conta o número de candidatos 
+        int qtdEleitos = retornaQtdEleitos(candidatos);
+        
+        // Organiza os candidatos por ordem de mais votados
+        Arrays.sort(candidatos); 
 
         //-------------------ANALISA CANDIDATOS--------------------
 
@@ -58,27 +81,13 @@ class Vereadores{
         for(int i = 0; i < qtdEleitos; i++){ 
             maisVotados[i] = candidatos[i];
         }
-
-        int qtdBeneficiados = 0;
-        
+  
         //Conta a quantidade de candidatos beneficiados pelo sistema
-        for(int i = 0; i < candidatosEleitos.length; i++){
-            for(int j = 0; j < candidatosEleitos.length; j++){
-
-                // Se o candidato está presente nas duas listas
-                if(maisVotados[j].getNome().equals(candidatosEleitos[i].getNome())){              
-                    break; 
-                }
-
-                // Se chega no final do for, significa que o candidato eleito não está nos mais votados
-                if(j == (candidatosEleitos.length - 1)) { 
-                    qtdBeneficiados++;  // logo ele foi não foi beneficiado e soma 1
-                }                   
-            }          
-        }
+        int qtdBeneficiados = retornaQtdBeneficiados(candidatosEleitos, maisVotados);
 
         // Armazenaremos os candidatos presentes na lista de mais votados mas que não foram eleitos
         Candidato[] naoEleitos = new Candidato[qtdBeneficiados];
+        
         int k = 0;
         for(int i = 0; i < candidatosEleitos.length; i++){
             for(int j = 0; j < candidatosEleitos.length; j++){

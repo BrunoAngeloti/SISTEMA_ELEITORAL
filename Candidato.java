@@ -80,6 +80,10 @@ public class Candidato implements Comparable<Candidato>{
         return this.getSituacao().equals("Eleito");
     }
 
+    public boolean identificaValidade(){
+        return this.getDestino_voto().equals("Válido");
+    }
+
     public String toString(Partido[] part){
         for(int i = 0; i < part.length; i++){
             if(part[i].comparaPartido(this.numero_partido)){

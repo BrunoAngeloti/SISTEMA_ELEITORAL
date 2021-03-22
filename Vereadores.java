@@ -68,8 +68,7 @@ class Vereadores{
 
                 // Se o candidato está presente nas duas listas
                 if(maisVotados[j].getNome().equals(candidatosEleitos[i].getNome())){              
-                    break; // quebra o for
-                    // o candidato foi beneficiado
+                    break; 
                 }
 
                 // Se chega no final do for, significa que o candidato eleito não está nos mais votados
@@ -82,7 +81,6 @@ class Vereadores{
         // Armazenaremos os candidatos presentes na lista de mais votados mas que não foram eleitos
         Candidato[] naoEleitos = new Candidato[qtdBeneficiados];
         int k = 0;
-
         for(int i = 0; i < candidatosEleitos.length; i++){
             for(int j = 0; j < candidatosEleitos.length; j++){
                 //Caso o candidato se encontrar em ambas as listas, ele foi eleito e é mais votado
@@ -120,7 +118,7 @@ class Vereadores{
             int total = 0;
             for(int j = 0; j < candidatos.length; j++){
                 if(partidos[i].comparaPartido(candidatos[j].getNumero_partido())){// caso o candidato seja do partido em questão
-                    if(candidatos[j].getDestino_voto().equals("Anulado sub judice")){ // candidato subjudice tem os votos anulados
+                    if(candidatos[j].getDestino_voto().equals("Anulado sub judice") || candidatos[j].getDestino_voto().equals("Anulado")){ // candidato subjudice tem os votos anulados
                         continue;
                     }
                     else{ // caso a situação seja valida
@@ -151,43 +149,31 @@ class Vereadores{
         Candidato Ultimos[] = new Candidato[partidos.length];
         k = 0;
         
-        int cont = 0;
-        cont = cont + 0; //ARRUMANDO WARNING QUE NAO SAI DE JEITO NENHUM.
 
         //Armazenando o primeiro candidato de cada partido
         for(int i = 0; i < partidos.length; i++){
             for(int j = 0; j < candidatos.length; j++){
-                if(partidos[i].comparaPartido(candidatos[j].getNumero_partido()) && candidatos[j].getDestino_voto().equalsIgnoreCase("Válido")){
+                if(partidos[i].comparaPartido(candidatos[j].getNumero_partido())){
                     Primeiros[k] = candidatos[j];  
                     k++;
-                    cont = 1;
                     break;       
                 }
             }
-            if(cont == 0){
-                Primeiros[k] = null;
-                k++;
-            }
-            cont = 0;
         }
 
-        Arrays.sort(Primeiros, Comparator.nullsLast(Comparator.naturalOrder()));
+        Arrays.sort(Primeiros);
         k=0;
 
         //Armazenando o ultimo candidato de cada partido
         for(int i=0; i < partidos.length; i++){
             for(int j = (candidatos.length - 1); j >= 0; j--){
-                if(Primeiros[i] != null){
-                    if(Primeiros[i].comparaNumPartido(candidatos[j].getNumero_partido()) && candidatos[j].getDestino_voto().equalsIgnoreCase("Válido")){
-                        Ultimos[k] = candidatos[j]; 
-                        k++;    
-                        break;     
-                    }
-                }else{
-                    Ultimos[k] = null;
-                    k++;
-                    break;
-                }            
+                
+                if(Primeiros[i].comparaNumPartido(candidatos[j].getNumero_partido())){
+                    Ultimos[k] = candidatos[j]; 
+                    k++;    
+                    break;     
+                }
+                         
             }
         }
         
@@ -249,10 +235,17 @@ class Vereadores{
         saida.println("\nPrimeiro e último colocados de cada partido:");
        
         for(int m = 0, n = 1; m < Primeiros.length; m++){
-            if(Primeiros[m] != null && Ultimos[m] != null){      
+            int numPartido = Primeiros[m].getNumero_partido();
+            int i = 0;
+            for(; i<partidos.length; i++){
+                if(partidos[i].comparaPartido(numPartido)){
+                    break;
+                }
+            }
+            if(partidos[i].getVotos_total() > 0){      
                 saida.println(n + " - " + Primeiros[m].toString(partidos, Ultimos[m].getNome_urna(), Ultimos[m].getNumero(), Ultimos[m].getVotos_nominais()));
                 n++;      
-            }         
+            }        
         } 
         
         saida.close(); // fecha o arquivo salvando o conteúdo

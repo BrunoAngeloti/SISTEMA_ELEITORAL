@@ -72,8 +72,14 @@ public class Partido implements Comparable<Partido>{
         if(this.votos_total > part.getVotos_total()){
             return -1;
         }
-        else{
+        else if(this.votos_total < part.getVotos_total()){
             return 1;
+        }else{
+            if(this.numero_partido < part.getNumero_partido()){
+                return -1;
+            }else{
+                return 1;
+            }
         }
     }
     

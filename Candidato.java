@@ -128,6 +128,22 @@ public class Candidato implements Comparable<Candidato>{
         }
         return false;
     }
+
+    public int retornaIdadeCandidato(String dataRef){
+        String[] dataCand = new String[3];
+        String[] dataAtual = new String[3];
+
+        dataCand = this.data_nasc.split("/");
+        dataAtual = dataRef.split("/");
+        if(Integer.parseInt(dataCand[1]) < Integer.parseInt(dataAtual[1])){
+            return (Integer.parseInt(dataAtual[2]) - Integer.parseInt(dataCand[2]));
+        }else if(Integer.parseInt(dataCand[1]) == Integer.parseInt(dataAtual[1]) && Integer.parseInt(dataCand[0]) <= Integer.parseInt(dataAtual[0])){
+            return (Integer.parseInt(dataAtual[2]) - Integer.parseInt(dataCand[2]));
+        }else{
+            return (Integer.parseInt(dataAtual[2]) - Integer.parseInt(dataCand[2]) - 1);
+        }
+        
+    }
 }
 
 

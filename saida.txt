@@ -106,3 +106,18 @@ Primeiro e último colocados de cada partido:
 23 - SOLIDARIEDADE - 77, PROFESSOR LUCIANO (77010, 159 votos) / DONA IRIN�IA (77555, 5 votos)
 24 - PTC - 36, WALTINHO DO TAXI (36000, 90 votos) / WALTINHO DO TAXI (36000, 90 votos)
 25 - PC do B - 65, CARLOS RABELLO (65651, 90 votos) / FLORENTINO (65138, 9 votos)
+
+Eleitos, por faixa etária (na data da eleição):
+      Idade < 30: 1 (6,67%)
+30 <= Idade < 40: 7 (46,67%)
+40 <= Idade < 50: 1 (6,67%)
+50 <= Idade < 60: 4 (26,67%)
+60 <= Idade     : 2 (13,33%)
+
+Eleitos, por sexo:
+Feminino: 2 (13,33%)
+Masculino: 13 (86,67%)
+
+Total de votos válidos:  168469
+Total de votos nominais:   160140 (95,06%)
+Total de votos de Legenda: 8329 (4,94%)

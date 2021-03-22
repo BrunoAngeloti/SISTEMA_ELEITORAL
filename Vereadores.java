@@ -3,7 +3,6 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.io.PrintWriter;
 import java.util.Arrays;
-import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -176,7 +175,38 @@ class Vereadores{
                          
             }
         }
-        
+
+        //------------------------CALCULOS DE IDADES, GÊNEROS E VOTOS------------------------
+
+        int idades[] = {0, 0, 0, 0, 0};
+        int sexos[] = {0, 0};
+        for(int i=0; i<candidatosEleitos.length; i++){
+            int idade = candidatosEleitos[i].retornaIdadeCandidato(args[2]);
+            if(idade < 30){
+                idades[0]++;
+            }else if(idade >= 30 && idade < 40){
+                idades[1]++;
+            }else if(idade >= 40 && idade < 50){
+                idades[2]++;
+            }else if(idade >= 50 && idade < 60){
+                idades[3]++;
+            }else if(idade >= 60){
+                idades[4]++;
+            }
+
+            if(candidatosEleitos[i].getSexo() == 'M'){
+                sexos[0]++;
+            }else{
+                sexos[1]++;
+            }
+        }
+
+        int votos[] = {0, 0, 0};
+        for(int i=0; i<partidos.length; i++){
+            votos[2] = votos[2] + partidos[i].getVotos_legenda();
+            votos[1] = votos[1] + partidos[i].getVotos_nominais();        
+        }
+        votos[0] = votos[1] + votos[2];
         
         //------------------------IMPRESSÕES DO CÓDIGO-------------------------
 
@@ -226,7 +256,7 @@ class Vereadores{
         }
 
         //OK
-       saida.println("\nVotação dos partidos e número de candidatos eleitos:");
+        saida.println("\nVotação dos partidos e número de candidatos eleitos:");
         
         for(int i = 0; i < partidos.length; i++){
             saida.println((i + 1) + " - " + partidos[i].toString());         
@@ -248,6 +278,22 @@ class Vereadores{
             }        
         } 
         
+        saida.println("\nEleitos, por faixa etária (na data da eleição):");
+        
+        saida.println("      Idade < 30: " + idades[0] + " (" + (String.format("%.2f" ,((double)idades[0]/qtdEleitos*100))) + "%)");
+        saida.println("30 <= Idade < 40: " + idades[1] + " (" + (String.format("%.2f" ,((double)idades[1]/qtdEleitos*100))) + "%)");
+        saida.println("40 <= Idade < 50: " + idades[2] + " (" + (String.format("%.2f" ,((double)idades[2]/qtdEleitos*100))) + "%)");
+        saida.println("50 <= Idade < 60: " + idades[3] + " (" + (String.format("%.2f" ,((double)idades[3]/qtdEleitos*100))) + "%)");
+        saida.println("60 <= Idade     : " + idades[4] + " (" + (String.format("%.2f" ,((double)idades[4]/qtdEleitos*100))) + "%)");
+
+        saida.println("\nEleitos, por sexo:");
+        saida.println("Feminino: " + sexos[1] + " (" + (String.format("%.2f" ,((double)sexos[1]/qtdEleitos*100))) + "%)");
+        saida.println("Masculino: " + sexos[0] + " (" + (String.format("%.2f" ,((double)sexos[0]/qtdEleitos*100))) + "%)");
+
+        saida.println("\nTotal de votos válidos:  " + votos[0]);
+        saida.println("Total de votos nominais:   " + votos[1] + " (" + (String.format("%.2f" ,((double)votos[1]/votos[0]*100))) + "%)");
+        saida.println("Total de votos de Legenda: " + votos[2] + " (" + (String.format("%.2f" ,((double)votos[2]/votos[0]*100))) + "%)");
+
         saida.close(); // fecha o arquivo salvando o conteúdo
     }
 }

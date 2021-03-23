@@ -8,7 +8,7 @@ import java.util.stream.Collectors;
 
 class Vereadores{
 
-    public static int retornaQtdEleitos(Candidato[] cand){
+    public static int retornaQtdEleitos(Candidato[] cand){ 
         int aux = 0;
         for(int i = 0; i < cand.length; i++){ 
             if(cand[i].identificaEleitos()){ 
@@ -168,7 +168,8 @@ class Vereadores{
             }
         }
 
-        Arrays.sort(Primeiros);
+        ComparadorUrnaCandidato urnaCandidato = new ComparadorUrnaCandidato();
+        Arrays.sort(Primeiros, urnaCandidato);
         k=0;
 
         //Armazenando o ultimo candidato de cada partido
@@ -223,22 +224,19 @@ class Vereadores{
         
         saida.println("Número de vagas: " + qtdEleitos + "\n\n" + "Vereadores eleitos:");
         
-        //OK
         
         for(int i = 0; i < candidatosEleitos.length; i++){
             saida.println((i+1) + " - " + candidatosEleitos[i].toString(partidos));
            
         } 
 
-        //OK
         saida.println("\nCandidatos mais votados (em ordem decrescente de votação e respeitando número de vagas):");
         
         for(int i = 0; i < maisVotados.length; i++){
             saida.println((i+1) + " - " + maisVotados[i].toString(partidos));
             
         } 
-
-        //OK    
+ 
         saida.println("\nTeriam sido eleitos se a votação fosse majoritária, e não foram eleitos:\n(com sua posição no ranking de mais votados)");
        
         for(int i = 0; i < naoEleitos.length; i++){
@@ -251,7 +249,6 @@ class Vereadores{
             }
         } 
 
-        //OK
         saida.println("\nEleitos, que se beneficiaram do sistema proporcional:\n(com sua posição no ranking de mais votados)");
         
         for(int i = 0; i < beneficiados.length; i++){
@@ -264,15 +261,12 @@ class Vereadores{
             }
         }
 
-        //OK
         saida.println("\nVotação dos partidos e número de candidatos eleitos:");
-        
         for(int i = 0; i < partidos.length; i++){
             saida.println((i + 1) + " - " + partidos[i].toString());         
         }
 
         saida.println("\nPrimeiro e último colocados de cada partido:");
-       
         for(int m = 0, n = 1; m < Primeiros.length; m++){
             int numPartido = Primeiros[m].getNumero_partido();
             int i = 0;
@@ -299,7 +293,7 @@ class Vereadores{
         saida.println("Feminino: " + sexos[1] + " (" + (String.format("%.2f" ,((double)sexos[1]/qtdEleitos*100))) + "%)");
         saida.println("Masculino: " + sexos[0] + " (" + (String.format("%.2f" ,((double)sexos[0]/qtdEleitos*100))) + "%)");
 
-        saida.println("\nTotal de votos válidos:  " + votos[0]);
+        saida.println("\nTotal de votos válidos:    " + votos[0]);
         saida.println("Total de votos nominais:   " + votos[1] + " (" + (String.format("%.2f" ,((double)votos[1]/votos[0]*100))) + "%)");
         saida.println("Total de votos de Legenda: " + votos[2] + " (" + (String.format("%.2f" ,((double)votos[2]/votos[0]*100))) + "%)");
 

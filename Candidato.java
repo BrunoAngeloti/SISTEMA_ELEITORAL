@@ -1,3 +1,25 @@
+import java.util.Comparator;
+
+class ComparadorUrnaCandidato implements Comparator<Candidato> {
+
+    @Override
+    public int compare(Candidato cand1, Candidato cand2) {
+        if(cand1.getVotos_nominais() > cand2.getVotos_nominais()){
+            return -1;
+        }
+        else if(cand1.getVotos_nominais() < cand2.getVotos_nominais()){
+            return 1;
+        }else{
+            if(cand1.getNumero_partido() < cand2.getNumero_partido()){
+                return -1;
+            }else{
+                return 1;
+            }
+        }
+    }
+
+}
+
 public class Candidato implements Comparable<Candidato>{
     private String nome;
     private char sexo; // F ou M
@@ -89,7 +111,7 @@ public class Candidato implements Comparable<Candidato>{
             if(part[i].comparaPartido(this.numero_partido)){
                 String print = this.getNome() + " / " + this.getNome_urna() + " (" + part[i].getSigla_partido() + ", " + Integer.toString(this.getVotos_nominais());
                 StringBuilder s = new StringBuilder(print);
-                if(this.getVotos_nominais() == 1 || this.getVotos_nominais() == 0){
+                if(this.getVotos_nominais() <= 1){
                     s.append(" voto)");
                 }
                 else{
@@ -107,14 +129,14 @@ public class Candidato implements Comparable<Candidato>{
             if(part[i].comparaPartido(this.numero_partido)){  
                 String print = part[i].getSigla_partido() + " - " + this.getNumero_partido() + ", " + this.getNome_urna() + " (" + this.getNumero() + ", " + this.getVotos_nominais();
                 StringBuilder s = new StringBuilder(print);
-                if(this.getVotos_nominais() == 1 || this.getVotos_nominais() == 0){
+                if(this.getVotos_nominais() <= 1){
                     s.append(" voto) / " + nome + " (" + num + ", " + votos);
                 }
                 else{
                     s.append(" votos) / " + nome + " (" + num + ", " + votos);
                 }
                 
-                if(votos == 1 || votos == 0){
+                if(votos <= 1){
                     s.append(" voto)");
                 }
                 else{
@@ -168,6 +190,8 @@ public class Candidato implements Comparable<Candidato>{
         }
         
     }
+
+    
 }
 
 

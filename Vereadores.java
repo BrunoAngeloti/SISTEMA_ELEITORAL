@@ -225,6 +225,7 @@ class Vereadores{
         saida.println("Número de vagas: " + qtdEleitos + "\n\n" + "Vereadores eleitos:");
         
         //OK
+        
         for(int i = 0; i < candidatosEleitos.length; i++){
             saida.println((i+1) + " - " + candidatosEleitos[i].toString(partidos));
            

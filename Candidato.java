@@ -87,7 +87,16 @@ public class Candidato implements Comparable<Candidato>{
     public String toString(Partido[] part){
         for(int i = 0; i < part.length; i++){
             if(part[i].comparaPartido(this.numero_partido)){
-                return this.nome + " / " + this.nome_urna + " (" + part[i].getSigla_partido() + ", " + Integer.toString(this.votos_nominais) + " votos)";
+                String print = this.getNome() + " / " + this.getNome_urna() + " (" + part[i].getSigla_partido() + ", " + Integer.toString(this.getVotos_nominais());
+                StringBuilder s = new StringBuilder(print);
+                if(this.getVotos_nominais() == 1){
+                    s.append(" voto)");
+                }
+                else{
+                    s.append(" votos)");
+                }
+                print = s.toString();
+                return print;
             }
         }
         return "erro";
@@ -95,15 +104,30 @@ public class Candidato implements Comparable<Candidato>{
 
     public String toString(Partido[] part, String nome, int num, int votos){
         for(int i = 0; i < part.length; i++){
-            if(part[i].comparaPartido(this.numero_partido)){            
-                return part[i].getSigla_partido() + " - " + this.numero_partido + ", " + this.nome_urna + " (" + this.numero + ", " + this.votos_nominais +" votos) / " + nome + " (" + num + ", " + votos + " votos)";
+            if(part[i].comparaPartido(this.numero_partido)){  
+                String print = part[i].getSigla_partido() + " - " + this.getNumero_partido() + ", " + this.getNome_urna() + " (" + this.getNumero() + ", " + this.getVotos_nominais();
+                StringBuilder s = new StringBuilder(print);
+                if(this.getVotos_nominais() == 1){
+                    s.append(" voto) / " + nome + " (" + num + ", " + votos);
+                }
+                else{
+                    s.append(" votos) / " + nome + " (" + num + ", " + votos);
+                }
+                
+                if(votos == 1){
+                    s.append(" voto)");
+                }
+                else{
+                    s.append(" votos)");
+                }
+                
+                print = s.toString();
+                return print;
             }
         }
         return "erro";
     }
 
-
-    @Override
     public int compareTo(Candidato cand) {
         if(cand != null){
             if(this.votos_nominais > cand.getVotos_nominais()){

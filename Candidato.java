@@ -1,3 +1,25 @@
+import java.util.Comparator;
+
+class ComparadorUrnaCandidato implements Comparator<Candidato> {
+
+    @Override
+    public int compare(Candidato cand1, Candidato cand2) {
+        if(cand1.getVotos_nominais() > cand2.getVotos_nominais()){
+            return -1;
+        }
+        else if(cand1.getVotos_nominais() < cand2.getVotos_nominais()){
+            return 1;
+        }else{
+            if(cand1.getNumero_partido() < cand2.getNumero_partido()){
+                return -1;
+            }else{
+                return 1;
+            }
+        }
+    }
+
+}
+
 public class Candidato implements Comparable<Candidato>{
     private String nome;
     private char sexo; // F ou M
@@ -168,6 +190,8 @@ public class Candidato implements Comparable<Candidato>{
         }
         
     }
+
+    
 }
 
 

@@ -89,7 +89,7 @@ public class Candidato implements Comparable<Candidato>{
             if(part[i].comparaPartido(this.numero_partido)){
                 String print = this.getNome() + " / " + this.getNome_urna() + " (" + part[i].getSigla_partido() + ", " + Integer.toString(this.getVotos_nominais());
                 StringBuilder s = new StringBuilder(print);
-                if(this.getVotos_nominais() == 1){
+                if(this.getVotos_nominais() == 1 || this.getVotos_nominais() == 0){
                     s.append(" voto)");
                 }
                 else{
@@ -107,14 +107,14 @@ public class Candidato implements Comparable<Candidato>{
             if(part[i].comparaPartido(this.numero_partido)){  
                 String print = part[i].getSigla_partido() + " - " + this.getNumero_partido() + ", " + this.getNome_urna() + " (" + this.getNumero() + ", " + this.getVotos_nominais();
                 StringBuilder s = new StringBuilder(print);
-                if(this.getVotos_nominais() == 1){
+                if(this.getVotos_nominais() == 1 || this.getVotos_nominais() == 0){
                     s.append(" voto) / " + nome + " (" + num + ", " + votos);
                 }
                 else{
                     s.append(" votos) / " + nome + " (" + num + ", " + votos);
                 }
                 
-                if(votos == 1){
+                if(votos == 1 || votos == 0){
                     s.append(" voto)");
                 }
                 else{

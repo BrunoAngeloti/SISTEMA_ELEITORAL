@@ -66,19 +66,19 @@ Votação dos partidos e número de candidatos eleitos:
 11 - PDT - 12, 8566 votos (8257 nominais e 309 de legenda), 1 candidato eleito
 12 - PSB - 40, 8445 votos (8097 nominais e 348 de legenda), 1 candidato eleito
 13 - PSOL - 50, 7054 votos (6837 nominais e 217 de legenda), 1 candidato eleito
-14 - REDE - 18, 5579 votos (5476 nominais e 103 de legenda), 0 candidatos eleitos
-15 - PSDB - 45, 4533 votos (4041 nominais e 492 de legenda), 0 candidatos eleitos
-16 - NOVO - 30, 4107 votos (3709 nominais e 398 de legenda), 0 candidatos eleitos
-17 - PMB - 35, 4018 votos (3975 nominais e 43 de legenda), 0 candidatos eleitos
-18 - DEM - 25, 3813 votos (3748 nominais e 65 de legenda), 0 candidatos eleitos
-19 - PP - 11, 2455 votos (2319 nominais e 136 de legenda), 0 candidatos eleitos
-20 - MDB - 15, 1771 votos (1618 nominais e 153 de legenda), 0 candidatos eleitos
-21 - PMN - 33, 964 votos (924 nominais e 40 de legenda), 0 candidatos eleitos
-22 - PRTB - 28, 907 votos (883 nominais e 24 de legenda), 0 candidatos eleitos
-23 - SOLIDARIEDADE - 77, 646 votos (625 nominais e 21 de legenda), 0 candidatos eleitos
-24 - PC do B - 65, 515 votos (473 nominais e 42 de legenda), 0 candidatos eleitos
-25 - PTC - 36, 101 votos (90 nominais e 11 de legenda), 0 candidatos eleitos
-26 - PCO - 29, 0 votos (0 nominais e 0 de legenda), 0 candidatos eleitos
+14 - REDE - 18, 5579 votos (5476 nominais e 103 de legenda), 0 candidato eleito
+15 - PSDB - 45, 4533 votos (4041 nominais e 492 de legenda), 0 candidato eleito
+16 - NOVO - 30, 4107 votos (3709 nominais e 398 de legenda), 0 candidato eleito
+17 - PMB - 35, 4018 votos (3975 nominais e 43 de legenda), 0 candidato eleito
+18 - DEM - 25, 3813 votos (3748 nominais e 65 de legenda), 0 candidato eleito
+19 - PP - 11, 2455 votos (2319 nominais e 136 de legenda), 0 candidato eleito
+20 - MDB - 15, 1771 votos (1618 nominais e 153 de legenda), 0 candidato eleito
+21 - PMN - 33, 964 votos (924 nominais e 40 de legenda), 0 candidato eleito
+22 - PRTB - 28, 907 votos (883 nominais e 24 de legenda), 0 candidato eleito
+23 - SOLIDARIEDADE - 77, 646 votos (625 nominais e 21 de legenda), 0 candidato eleito
+24 - PC do B - 65, 515 votos (473 nominais e 42 de legenda), 0 candidato eleito
+25 - PTC - 36, 101 votos (90 nominais e 11 de legenda), 0 candidato eleito
+26 - PCO - 29, 0 voto (0 nominal e 0 de legenda), 0 candidato eleito
 
 Primeiro e último colocados de cada partido:
 1 - CIDADANIA - 23, DENNINHO SILVA (23444, 7213 votos) / MARA SILVEIRA (23225, 34 votos)

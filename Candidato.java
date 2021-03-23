@@ -4,18 +4,23 @@ class ComparadorUrnaCandidato implements Comparator<Candidato> {
 
     @Override
     public int compare(Candidato cand1, Candidato cand2) {
-        if(cand1.getVotos_nominais() > cand2.getVotos_nominais()){
-            return -1;
-        }
-        else if(cand1.getVotos_nominais() < cand2.getVotos_nominais()){
-            return 1;
-        }else{
-            if(cand1.getNumero_partido() < cand2.getNumero_partido()){
+        if(cand1 != null){
+            if(cand1.getVotos_nominais() > cand2.getVotos_nominais()){
                 return -1;
-            }else{
-                return 1;
             }
+            else if(cand1.getVotos_nominais() < cand2.getVotos_nominais()){
+                return 1;
+            }else{
+                if(cand1.getNumero_partido() < cand2.getNumero_partido()){
+                    return -1;
+                }else{
+                    return 1;
+                }
+            }
+        }else{
+            return 0;
         }
+        
     }
 
 }
@@ -152,16 +157,48 @@ public class Candidato implements Comparable<Candidato>{
 
     public int compareTo(Candidato cand) {
         if(cand != null){
+            String[] dataCand1 = new String[3];
+            String[] dataCand2 = new String[3];
+            
+            dataCand1 = this.data_nasc.split("/");
+            dataCand2 = cand.getData_nasc().split("/");
+            
             if(this.votos_nominais > cand.getVotos_nominais()){
                 return -1;
             }
             else if(this.votos_nominais < cand.getVotos_nominais()){
                 return 1;
-            }else{
-                if(this.numero_partido < cand.getNumero_partido()){
+            }
+            else{
+                if(Integer.parseInt(dataCand1[2]) < Integer.parseInt(dataCand2[2])){ // retorna -1, o cand1 é mais velho
                     return -1;
-                }else{
+                }
+                else if(Integer.parseInt(dataCand1[2]) > Integer.parseInt(dataCand2[2])){ // retorna 1, o cand2 é o mais velho
                     return 1;
+                }
+                else{
+                    if(Integer.parseInt(dataCand1[1]) < Integer.parseInt(dataCand2[1])){ // retorna -1, o cand1 é mais velho
+                        return -1;
+                    }
+                    else if(Integer.parseInt(dataCand1[1]) > Integer.parseInt(dataCand2[1])){ // retorna 1, o cand2 é o mais velho
+                        return 1;
+                    }
+                    else{
+                        if(Integer.parseInt(dataCand1[0]) < Integer.parseInt(dataCand2[0])){ // retorna -1, o cand1 é mais velho
+                            return -1;
+                        }
+                        else if(Integer.parseInt(dataCand1[0]) > Integer.parseInt(dataCand2[0])){ // retorna 1, o cand2 é o mais velho
+                            return 1;
+                        }
+                        else{
+                            if(this.getNumero() < cand.getNumero()){
+                                return -1;
+                            }
+                            else{
+                                return 1;
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -190,7 +227,6 @@ public class Candidato implements Comparable<Candidato>{
         }
         
     }
-
     
 }
 

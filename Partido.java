@@ -84,7 +84,33 @@ public class Partido implements Comparable<Partido>{
     }
     
     public String toString(){
-        return this.sigla_partido + " - " + this.numero_partido + ", " + this.getVotos_total() + " votos (" + this.getVotos_nominais() + " nominais e " + this.getVotos_legenda() + " de legenda) " + ", " + this.getCand_eleitos() +" candidatos eleitos";
+        String print = this.sigla_partido + " - " + this.numero_partido + ", " + Integer.toString(this.getVotos_total());
+        StringBuilder result = new StringBuilder(print);
+          
+        if(this.getVotos_total() == 1){
+           result.append(" voto (");
+        }
+        else{
+            result.append(" votos (");
+        }
+
+        result.append(Integer.toString(this.getVotos_nominais()));
+        if(this.getVotos_nominais() == 1){
+            result.append(" nominal e ");
+        }
+        else{
+            result.append(" nominais e ");
+        }
+
+        result.append(Integer.toString(this.getVotos_legenda()) + " de legenda), " + Integer.toString(this.getCand_eleitos()));
+        if(this.getCand_eleitos() == 1){
+            result.append(" candidato eleito");
+        }
+        else{
+            result.append(" candidatos eleitos");
+        }
+        print = result.toString();
+        return print;
     }
     
 }

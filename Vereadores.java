@@ -1,7 +1,8 @@
+
+
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.io.PrintWriter;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -36,8 +37,6 @@ class Vereadores{
     }
 
     public static void main (String[] args) throws IOException{
-        Arquivo arq = new Arquivo(); // instancia um objeto do tipo arquivo 
-        PrintWriter saida; // cria um objeto da classe PrintWriter que permite escrever no arquivo
  
         // Lê arquivo de candidatos e coloca dentro de uma lista de Candidatos
         List<Candidato> candAux = Files.lines(Paths.get(args[0]))
@@ -219,54 +218,52 @@ class Vereadores{
         
         //------------------------IMPRESSÕES DO CÓDIGO-------------------------
 
-
-        saida = arq.permiteImpressaoSaida(); // retorna um objeto do tipo PW que permite escrever no arquivo de 
-        
-        saida.println("Número de vagas: " + qtdEleitos + "\n\n" + "Vereadores eleitos:");
-        
+        System.out.println("Número de vagas: " + qtdEleitos + "\n\n" + "Vereadores eleitos:");
         
         for(int i = 0; i < candidatosEleitos.length; i++){
-            saida.println((i+1) + " - " + candidatosEleitos[i].toString(partidos));
-           
+            
+            System.out.println((i+1) + " - " + candidatosEleitos[i].toString(partidos));
         } 
 
-        saida.println("\nCandidatos mais votados (em ordem decrescente de votação e respeitando número de vagas):");
+        
+        System.out.println("\nCandidatos mais votados (em ordem decrescente de votação e respeitando número de vagas):");
         
         for(int i = 0; i < maisVotados.length; i++){
-            saida.println((i+1) + " - " + maisVotados[i].toString(partidos));
+            
+            System.out.println((i+1) + " - " + maisVotados[i].toString(partidos));
             
         } 
  
-        saida.println("\nTeriam sido eleitos se a votação fosse majoritária, e não foram eleitos:\n(com sua posição no ranking de mais votados)");
+        System.out.println("\nTeriam sido eleitos se a votação fosse majoritária, e não foram eleitos:\n(com sua posição no ranking de mais votados)");
        
         for(int i = 0; i < naoEleitos.length; i++){
             for(int j = 0; j < maisVotados.length; j++){
                 if(maisVotados[j].getNome().equals(naoEleitos[i].getNome())){
-                    saida.println((j+1) + " - " + naoEleitos[i].toString(partidos));
+                    System.out.println((j+1) + " - " + naoEleitos[i].toString(partidos));
                     
                     break;
                 }
             }
         } 
 
-        saida.println("\nEleitos, que se beneficiaram do sistema proporcional:\n(com sua posição no ranking de mais votados)");
+        System.out.println("\nEleitos, que se beneficiaram do sistema proporcional:\n(com sua posição no ranking de mais votados)");
         
         for(int i = 0; i < beneficiados.length; i++){
             for(int j = 0; j < candidatos.length; j++){
                 if(beneficiados[i].getNome().equals(candidatos[j].getNome())){
-                    saida.println((j+1) + " - " + beneficiados[i].toString(partidos));
+                    System.out.println((j+1) + " - " + beneficiados[i].toString(partidos));
                     
                     break;
                 }
             }
         }
 
-        saida.println("\nVotação dos partidos e número de candidatos eleitos:");
+        System.out.println("\nVotação dos partidos e número de candidatos eleitos:");
         for(int i = 0; i < partidos.length; i++){
-            saida.println((i + 1) + " - " + partidos[i].toString());         
+            System.out.println((i + 1) + " - " + partidos[i].toString());         
         }
 
-        saida.println("\nPrimeiro e último colocados de cada partido:");
+        System.out.println("\nPrimeiro e último colocados de cada partido:");
         for(int m = 0, n = 1; m < Primeiros.length; m++){
             int numPartido = Primeiros[m].getNumero_partido();
             int i = 0;
@@ -276,27 +273,26 @@ class Vereadores{
                 }
             }
             if(partidos[i].getVotos_total() > 0){      
-                saida.println(n + " - " + Primeiros[m].toString(partidos, Ultimos[m].getNome_urna(), Ultimos[m].getNumero(), Ultimos[m].getVotos_nominais()));
+                System.out.println(n + " - " + Primeiros[m].toString(partidos, Ultimos[m].getNome_urna(), Ultimos[m].getNumero(), Ultimos[m].getVotos_nominais()));
                 n++;      
             }        
         } 
         
-        saida.println("\nEleitos, por faixa etária (na data da eleição):");
+        System.out.println("\nEleitos, por faixa etária (na data da eleição):");
         
-        saida.println("      Idade < 30: " + idades[0] + " (" + (String.format("%.2f" ,((double)idades[0]/qtdEleitos*100))) + "%)");
-        saida.println("30 <= Idade < 40: " + idades[1] + " (" + (String.format("%.2f" ,((double)idades[1]/qtdEleitos*100))) + "%)");
-        saida.println("40 <= Idade < 50: " + idades[2] + " (" + (String.format("%.2f" ,((double)idades[2]/qtdEleitos*100))) + "%)");
-        saida.println("50 <= Idade < 60: " + idades[3] + " (" + (String.format("%.2f" ,((double)idades[3]/qtdEleitos*100))) + "%)");
-        saida.println("60 <= Idade     : " + idades[4] + " (" + (String.format("%.2f" ,((double)idades[4]/qtdEleitos*100))) + "%)");
+        System.out.println("      Idade < 30: " + idades[0] + " (" + (String.format("%.2f" ,((double)idades[0]/qtdEleitos*100))) + "%)");
+        System.out.println("30 <= Idade < 40: " + idades[1] + " (" + (String.format("%.2f" ,((double)idades[1]/qtdEleitos*100))) + "%)");
+        System.out.println("40 <= Idade < 50: " + idades[2] + " (" + (String.format("%.2f" ,((double)idades[2]/qtdEleitos*100))) + "%)");
+        System.out.println("50 <= Idade < 60: " + idades[3] + " (" + (String.format("%.2f" ,((double)idades[3]/qtdEleitos*100))) + "%)");
+        System.out.println("60 <= Idade     : " + idades[4] + " (" + (String.format("%.2f" ,((double)idades[4]/qtdEleitos*100))) + "%)");
 
-        saida.println("\nEleitos, por sexo:");
-        saida.println("Feminino: " + sexos[1] + " (" + (String.format("%.2f" ,((double)sexos[1]/qtdEleitos*100))) + "%)");
-        saida.println("Masculino: " + sexos[0] + " (" + (String.format("%.2f" ,((double)sexos[0]/qtdEleitos*100))) + "%)");
+        System.out.println("\nEleitos, por sexo:");
+        System.out.println("Feminino: " + sexos[1] + " (" + (String.format("%.2f" ,((double)sexos[1]/qtdEleitos*100))) + "%)");
+        System.out.println("Masculino: " + sexos[0] + " (" + (String.format("%.2f" ,((double)sexos[0]/qtdEleitos*100))) + "%)");
 
-        saida.println("\nTotal de votos válidos:    " + votos[0]);
-        saida.println("Total de votos nominais:   " + votos[1] + " (" + (String.format("%.2f" ,((double)votos[1]/votos[0]*100))) + "%)");
-        saida.println("Total de votos de Legenda: " + votos[2] + " (" + (String.format("%.2f" ,((double)votos[2]/votos[0]*100))) + "%)");
+        System.out.println("\nTotal de votos válidos:    " + votos[0]);
+        System.out.println("Total de votos nominais:   " + votos[1] + " (" + (String.format("%.2f" ,((double)votos[1]/votos[0]*100))) + "%)");
+        System.out.println("Total de votos de Legenda: " + votos[2] + " (" + (String.format("%.2f" ,((double)votos[2]/votos[0]*100))) + "%)");
 
-        saida.close(); // fecha o arquivo salvando o conteúdo
     }
 }

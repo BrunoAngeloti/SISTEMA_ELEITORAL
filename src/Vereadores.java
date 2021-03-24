@@ -1,4 +1,4 @@
-
+package src;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -287,7 +287,7 @@ class Vereadores{
         System.out.println("60 <= Idade     : " + idades[4] + " (" + (String.format("%.2f" ,((double)idades[4]/qtdEleitos*100))) + "%)");
 
         System.out.println("\nEleitos, por sexo:");
-        System.out.println("Feminino: " + sexos[1] + " (" + (String.format("%.2f" ,((double)sexos[1]/qtdEleitos*100))) + "%)");
+        System.out.println("Feminino:  " + sexos[1] + " (" + (String.format("%.2f" ,((double)sexos[1]/qtdEleitos*100))) + "%)");
         System.out.println("Masculino: " + sexos[0] + " (" + (String.format("%.2f" ,((double)sexos[0]/qtdEleitos*100))) + "%)");
 
         System.out.println("\nTotal de votos válidos:    " + votos[0]);

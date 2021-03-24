@@ -1,4 +1,4 @@
-
+package src;
 
 public class Partido implements Comparable<Partido>{
     private int numero_partido;

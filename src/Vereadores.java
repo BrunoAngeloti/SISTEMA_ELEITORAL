@@ -1,5 +1,6 @@
 package src;
 
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -9,10 +10,23 @@ import java.util.stream.Collectors;
 
 class Vereadores{
 
+    private static FileInputStream fileInputCand;
+    private static FileInputStream fileInputPart;
+
     public static int retornaQtdEleitos(Candidato[] cand){ 
         int aux = 0;
         for(int i = 0; i < cand.length; i++){ 
             if(cand[i].identificaEleitos()){ 
+                aux++;
+            }
+        }
+        return aux;
+    }
+
+    public static int retornaQtdValidos(Candidato[] cand){ 
+        int aux = 0;
+        for(int i = 0; i < cand.length; i++){ 
+            if(cand[i].identificaValidade()){ 
                 aux++;
             }
         }
@@ -37,8 +51,24 @@ class Vereadores{
     }
 
     public static void main (String[] args) throws IOException{
- 
-        // Lê arquivo de candidatos e coloca dentro de uma lista de Candidatos
+
+        //------------------Verifica argumentos passados-----------------------
+        if(args == null || args.length < 3){
+            System.out.println("\nERRO: Argumentos insuficientes\n");
+            System.exit(0); 
+        }
+        try {
+            fileInputCand = new java.io.FileInputStream(args[0]);
+            fileInputPart = new java.io.FileInputStream(args[1]);
+        }
+        catch (IOException e){
+            System.out.println("\nERRO: Verifique os argumentos passados\n");
+            System.exit(0); 
+        }
+
+        //------------------Leitura arquivos---------------------
+        
+        //Lê arquivo de candidatos e coloca dentro de uma lista de Candidatos
         List<Candidato> candAux = Files.lines(Paths.get(args[0]))
              .skip(1) //ignora a primeira linha do cabeçalhos
              .map(line -> line.split(","))
@@ -58,18 +88,28 @@ class Vereadores{
 
         // Conta o número de candidatos 
         int qtdEleitos = retornaQtdEleitos(candidatos);
+        int qtdValidos = retornaQtdValidos(candidatos);
+
+        Candidato[] candidatosValidos = new Candidato[qtdValidos];
+
+        for(int i = 0, j = 0; i < candidatos.length; i++){ 
+            if(candidatos[i].identificaValidade()){ 
+                candidatosValidos[j] = candidatos[i];
+                j++;
+            }
+        }
         
         // Organiza os candidatos por ordem de mais votados
-        Arrays.sort(candidatos); 
+        Arrays.sort(candidatosValidos); 
 
         //-------------------ANALISA CANDIDATOS--------------------
 
         Candidato[] candidatosEleitos = new Candidato[qtdEleitos];
 
         // Preenche o vetor com os candidatos eleitos
-        for(int i = 0, j = 0; i < candidatos.length; i++){ 
-            if(candidatos[i].identificaEleitos()){ 
-                candidatosEleitos[j] = candidatos[i];
+        for(int i = 0, j = 0; i < candidatosValidos.length; i++){ 
+            if(candidatosValidos[i].identificaEleitos()){ 
+                candidatosEleitos[j] = candidatosValidos[i];
                 j++;
             }
         }
@@ -77,7 +117,7 @@ class Vereadores{
         // Os mais votados são separados em um vetor
         Candidato[] maisVotados = new Candidato[qtdEleitos];
         for(int i = 0; i < qtdEleitos; i++){ 
-            maisVotados[i] = candidatos[i];
+            maisVotados[i] = candidatosValidos[i];
         }
   
         //Conta a quantidade de candidatos beneficiados pelo sistema
@@ -122,13 +162,13 @@ class Vereadores{
 
         for(int i = 0; i < partidos.length; i++){
             int total = 0;
-            for(int j = 0; j < candidatos.length; j++){
-                if(partidos[i].comparaPartido(candidatos[j].getNumero_partido())){// caso o candidato seja do partido em questão
-                    if(candidatos[j].getDestino_voto().equals("Anulado sub judice") || candidatos[j].getDestino_voto().equals("Anulado")){ // candidato subjudice tem os votos anulados
+            for(int j = 0; j < candidatosValidos.length; j++){
+                if(partidos[i].comparaPartido(candidatosValidos[j].getNumero_partido())){// caso o candidato seja do partido em questão
+                    if(candidatosValidos[j].getDestino_voto().equals("Anulado sub judice") || candidatosValidos[j].getDestino_voto().equals("Anulado")){ // candidato subjudice tem os votos anulados
                         continue;
                     }
                     else{ // caso a situação seja valida
-                        total = total + candidatos[j].getVotos_nominais(); //os votos dele são somados ao partido
+                        total = total + candidatosValidos[j].getVotos_nominais(); //os votos dele são somados ao partido
                     }
                 }
             }
@@ -158,12 +198,18 @@ class Vereadores{
 
         //Armazenando o primeiro candidato de cada partido
         for(int i = 0; i < partidos.length; i++){
-            for(int j = 0; j < candidatos.length; j++){
-                if(partidos[i].comparaPartido(candidatos[j].getNumero_partido())){
-                    Primeiros[k] = candidatos[j];  
+            boolean naoValido = true;
+            for(int j = 0; j < candidatosValidos.length; j++){
+                if(partidos[i].comparaPartido(candidatosValidos[j].getNumero_partido())){
+                    Primeiros[k] = candidatosValidos[j];  
                     k++;
+                    naoValido = false;
                     break;       
                 }
+            }
+            if(naoValido){
+                Primeiros[k] = new Candidato(0, 0, null, null, null, 'n', null, null, partidos[i].getNumero_partido());
+                k++;
             }
         }
 
@@ -173,14 +219,22 @@ class Vereadores{
 
         //Armazenando o ultimo candidato de cada partido
         for(int i=0; i < partidos.length; i++){
-            for(int j = (candidatos.length - 1); j >= 0; j--){
+            boolean naoValido = true;
+            for(int j = (candidatosValidos.length - 1); j >= 0; j--){
                 
-                if(Primeiros[i].comparaNumPartido(candidatos[j].getNumero_partido())){
-                    Ultimos[k] = candidatos[j]; 
-                    k++;    
+                if(Primeiros[i].comparaNumPartido(candidatosValidos[j].getNumero_partido())){
+                      
+                    Ultimos[k] = candidatosValidos[j]; 
+                    k++;
+                    naoValido = false;
                     break;     
                 }
-                         
+                
+                
+            }
+            if(naoValido){    
+                Ultimos[k] = new Candidato(0, 0, null, null, null, 'n', null, null, partidos[i].getNumero_partido());
+                k++;
             }
         }
 
@@ -249,8 +303,8 @@ class Vereadores{
         System.out.println("\nEleitos, que se beneficiaram do sistema proporcional:\n(com sua posição no ranking de mais votados)");
         
         for(int i = 0; i < beneficiados.length; i++){
-            for(int j = 0; j < candidatos.length; j++){
-                if(beneficiados[i].getNome().equals(candidatos[j].getNome())){
+            for(int j = 0; j < candidatosValidos.length; j++){
+                if(beneficiados[i].getNome().equals(candidatosValidos[j].getNome())){
                     System.out.println((j+1) + " - " + beneficiados[i].toString(partidos));
                     
                     break;
@@ -272,9 +326,15 @@ class Vereadores{
                     break;
                 }
             }
-            if(partidos[i].getVotos_total() > 0){      
+            if(Primeiros[m].getSexo() != 'n' && Ultimos[m].getSexo() != 'n'){      
                 System.out.println(n + " - " + Primeiros[m].toString(partidos, Ultimos[m].getNome_urna(), Ultimos[m].getNumero(), Ultimos[m].getVotos_nominais()));
                 n++;      
+            }else if(Primeiros[m].getSexo() != 'n' && Ultimos[m].getSexo() == 'n'){
+                System.out.println(n + " - " + Primeiros[m].toString(partidos, Primeiros[m].getNome_urna(), Primeiros[m].getNumero(), Primeiros[m].getVotos_nominais()));
+                n++;  
+            }else if(Primeiros[m].getSexo() == 'n' && Ultimos[m].getSexo() != 'n'){
+                System.out.println(n + " - " + Ultimos[m].toString(partidos, Ultimos[m].getNome_urna(), Ultimos[m].getNumero(), Ultimos[m].getVotos_nominais()));
+                n++;  
             }        
         } 
         
@@ -294,5 +354,7 @@ class Vereadores{
         System.out.println("Total de votos nominais:   " + votos[1] + " (" + (String.format("%.2f" ,((double)votos[1]/votos[0]*100))) + "%)");
         System.out.println("Total de votos de Legenda: " + votos[2] + " (" + (String.format("%.2f" ,((double)votos[2]/votos[0]*100))) + "%)");
 
+        fileInputCand.close();
+        fileInputPart.close();
     }
 }

@@ -2,53 +2,12 @@ package src;
 
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.Arrays;
-import java.util.List;
-import java.util.stream.Collectors;
 
 class Vereadores{
 
     private static FileInputStream fileInputCand;
     private static FileInputStream fileInputPart;
-
-    public static int retornaQtdEleitos(Candidato[] cand){ 
-        int aux = 0;
-        for(int i = 0; i < cand.length; i++){ 
-            if(cand[i].identificaEleitos()){ 
-                aux++;
-            }
-        }
-        return aux;
-    }
-
-    public static int retornaQtdValidos(Candidato[] cand){ 
-        int aux = 0;
-        for(int i = 0; i < cand.length; i++){ 
-            if(cand[i].identificaValidade()){ 
-                aux++;
-            }
-        }
-        return aux;
-    }
-
-    public static int retornaQtdBeneficiados(Candidato[] candEleitos, Candidato[] maisVotados){
-        int aux = 0;
-        for(int i = 0; i < candEleitos.length; i++){
-            for(int j = 0; j < candEleitos.length; j++){
-                // Se o candidato está presente nas duas listas
-                if(maisVotados[j].getNome().equals(candEleitos[i].getNome())){              
-                    break; 
-                }
-                // Se chega no final do for, significa que o candidato eleito não está nos mais votados
-                if(j == (candEleitos.length - 1)) { 
-                    aux++;  // logo ele foi não foi beneficiado e soma 1
-                }                   
-            }          
-        }
-        return aux;
-    }
 
     public static void main (String[] args) throws IOException{
 
@@ -67,28 +26,16 @@ class Vereadores{
         }
 
         //------------------Leitura arquivos---------------------
-        
-        //Lê arquivo de candidatos e coloca dentro de uma lista de Candidatos
-        List<Candidato> candAux = Files.lines(Paths.get(args[0]))
-             .skip(1) //ignora a primeira linha do cabeçalhos
-             .map(line -> line.split(","))
-             .map(str -> new Candidato(Integer.parseInt(str[0]), Integer.parseInt(str[1]), str[2], str[3], str[4], str[5].charAt(0), str[6], str[7], Integer.parseInt(str[8])))
-             .collect(Collectors.toList());
-        
-        // Lê o arquivo de partidos e coloca dentro de uma lista de Partidos
-        List<Partido> partAux = Files.lines(Paths.get(args[1]))
-             .skip(1)
-             .map(line -> line.split(","))
-             .map(str -> new Partido(Integer.parseInt(str[0]), Integer.parseInt(str[1]), str[2], str[3]))
-             .collect(Collectors.toList());
+
+        Gerenciadores gerencia = new Gerenciadores();
         
         // Transforma a lista de candidatos e de partidos em um array
-        Candidato[] candidatos = candAux.toArray(new Candidato[candAux.size()]);
-        Partido[] partidos = partAux.toArray(new Partido[partAux.size()]);    
+        Candidato[] candidatos = gerencia.leCandidatos(args[0]);
+        Partido[] partidos = gerencia.lePartidos(args[1]);
 
         // Conta o número de candidatos 
-        int qtdEleitos = retornaQtdEleitos(candidatos);
-        int qtdValidos = retornaQtdValidos(candidatos);
+        int qtdEleitos = gerencia.retornaQtdEleitos(candidatos);
+        int qtdValidos = gerencia.retornaQtdValidos(candidatos);
 
         Candidato[] candidatosValidos = new Candidato[qtdValidos];
 
@@ -121,7 +68,7 @@ class Vereadores{
         }
   
         //Conta a quantidade de candidatos beneficiados pelo sistema
-        int qtdBeneficiados = retornaQtdBeneficiados(candidatosEleitos, maisVotados);
+        int qtdBeneficiados = gerencia.retornaQtdBeneficiados(candidatosEleitos, maisVotados);
 
         // Armazenaremos os candidatos presentes na lista de mais votados mas que não foram eleitos
         Candidato[] naoEleitos = new Candidato[qtdBeneficiados];
@@ -220,17 +167,13 @@ class Vereadores{
         //Armazenando o ultimo candidato de cada partido
         for(int i=0; i < partidos.length; i++){
             boolean naoValido = true;
-            for(int j = (candidatosValidos.length - 1); j >= 0; j--){
-                
-                if(Primeiros[i].comparaNumPartido(candidatosValidos[j].getNumero_partido())){
-                      
+            for(int j = (candidatosValidos.length - 1); j >= 0; j--){               
+                if(Primeiros[i].comparaNumPartido(candidatosValidos[j].getNumero_partido())){                      
                     Ultimos[k] = candidatosValidos[j]; 
                     k++;
                     naoValido = false;
                     break;     
-                }
-                
-                
+                }                          
             }
             if(naoValido){    
                 Ultimos[k] = new Candidato(0, 0, null, null, null, 'n', null, null, partidos[i].getNumero_partido());
@@ -335,7 +278,7 @@ class Vereadores{
             }else if(Primeiros[m].getSexo() == 'n' && Ultimos[m].getSexo() != 'n'){
                 System.out.println(n + " - " + Ultimos[m].toString(partidos, Ultimos[m].getNome_urna(), Ultimos[m].getNumero(), Ultimos[m].getVotos_nominais()));
                 n++;  
-            }        
+            }       
         } 
         
         System.out.println("\nEleitos, por faixa etária (na data da eleição):");

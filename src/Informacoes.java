@@ -39,7 +39,7 @@ public class Informacoes{
         return aux;
     }
 
-    public Candidato[] identificaValidos(Candidato[] cand) {
+    public Candidato[] retornaCandValidos(Candidato[] cand) {
         Candidato[] candValidos = new Candidato[this.retornaQtdValidos(cand)];
         for(int i = 0, j = 0; i < cand.length; i++){ 
             if(cand[i].identificaValidade()){ 
@@ -48,6 +48,25 @@ public class Informacoes{
             }
         }
         return candValidos;
+    }
+
+    public Candidato[] retornaCandEleitos(Candidato[] candValidos, int qtdEleitos) {
+        Candidato[] candEleitos = new Candidato[qtdEleitos];
+        for(int i = 0, j = 0; i < candValidos.length; i++){ 
+            if(candValidos[i].identificaEleitos()){ 
+                candEleitos[j] = candValidos[i];
+                j++;
+            }
+        }
+        return candEleitos;
+    }
+
+    public Candidato[] retornaCandsMaisVotados(Candidato[] candValidos, int qtdEleitos) {
+        Candidato[] maisVotados = new Candidato[qtdEleitos];
+        for(int i = 0; i < qtdEleitos; i++){ 
+            maisVotados[i] = candValidos[i];
+        }
+        return maisVotados;
     }
 
     public Candidato[] identificaBeneficiados(Candidato[] candEleitos, Candidato[] maisVotados){
@@ -94,12 +113,9 @@ public class Informacoes{
             int total = 0;
             for(int j = 0; j < candValidos.length; j++){
                 if(p[i].comparaPartido(candValidos[j].getNumero_partido())){// caso o candidato seja do partido em questão
-                    if(candValidos[j].getDestino_voto().equals("Anulado sub judice") || candValidos[j].getDestino_voto().equals("Anulado")){ // candidato subjudice tem os votos anulados
-                        continue;
-                    }
-                    else{ // caso a situação seja valida
-                        total = total + candValidos[j].getVotos_nominais(); //os votos dele são somados ao partido
-                    }
+                    
+                    total = total + candValidos[j].getVotos_nominais(); //os votos dele são somados ao partido
+                    
                 }
             }
             p[i].setVotos_nominais(total);
@@ -163,5 +179,50 @@ public class Informacoes{
         }
         return p;
     }
+
+    public int[] retornaIdades(Candidato[] candEleitos, String data){
+        int idades[] = {0, 0, 0, 0, 0};
+
+        for(int i=0; i<candEleitos.length; i++){
+            int idade = candEleitos[i].retornaIdadeCandidato(data);
+            if(idade < 30){
+                idades[0]++;
+            }else if(idade >= 30 && idade < 40){
+                idades[1]++;
+            }else if(idade >= 40 && idade < 50){
+                idades[2]++;
+            }else if(idade >= 50 && idade < 60){
+                idades[3]++;
+            }else if(idade >= 60){
+                idades[4]++;
+            }
+        }
+        return idades;     
+    }
+
+    public int[] retornaSexos(Candidato[] candEleitos){
+        int sexos[] = {0, 0};
+        for(int i=0; i<candEleitos.length; i++){
+            if(candEleitos[i].getSexo() == 'M'){
+                sexos[0]++; // MASCULINO
+            }else{
+                sexos[1]++; // FEMININO
+            }
+        }
+        return sexos;     
+    }
+
+    public int[] retornaVotos(Partido[] partidos){
+        int votos[] = {0, 0, 0};
+        for(int i=0; i<partidos.length; i++){
+            votos[2] = votos[2] + partidos[i].getVotos_legenda();
+            votos[1] = votos[1] + partidos[i].getVotos_nominais();        
+        }
+        votos[0] = votos[1] + votos[2];
+
+        return votos;
+    }
+
+    
 
 }

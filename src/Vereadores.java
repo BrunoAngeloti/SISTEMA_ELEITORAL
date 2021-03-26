@@ -12,7 +12,7 @@ class Vereadores{
     public static void main (String[] args) throws IOException{
 
         //------------------Verifica argumentos passados-----------------------
-        /*if(args == null || args.length < 3){
+        if(args == null || args.length < 3){
             System.out.println("\nERRO: Argumentos insuficientes\n");
             System.exit(0); 
         }
@@ -23,19 +23,19 @@ class Vereadores{
         catch (IOException e){
             System.out.println("\nERRO: Verifique os argumentos passados\n");
             System.exit(0); 
-        }*/
+        }
 
         //------------------Leitura arquivos---------------------
 
         Inout inout = new Inout();
         Informacoes info = new Informacoes();
-        //String fileCandidatos = args[0];
-        //String filePartidos = args[1];
-        //String dataEleicao = args[2];
+        String fileCandidatos = args[0];
+        String filePartidos = args[1];
+        String dataEleicao = args[2];
 
-        String fileCandidatos = "capitais/vitória-candidatos.csv";
-        String filePartidos = "capitais/vitória-partidos.csv";
-        String dataEleicao = "15/11/2020";
+        //String fileCandidatos = "capitais/vitória-candidatos.csv";
+        //String filePartidos = "capitais/vitória-partidos.csv";
+        //String dataEleicao = "15/11/2020";
         
         // Chama método para ler os candidatos e os partidos
         Candidato[] candidatos = inout.leCandidatos(fileCandidatos);
@@ -69,20 +69,23 @@ class Vereadores{
 
         partidos = info.analisaVotosPartidos(partidos, candidatosValidos);
 
-        Arrays.sort(partidos); // organiza os partidos por maior numero de votos no total
+        
 
         // identifica quantos candidatos foram eleitos de cada partido
         partidos = info.identificaEleitosPartidos(partidos, candidatosEleitos);
 
+        Arrays.sort(partidos); // organiza os partidos por maior numero de votos no total
+
         //Armazenando o primeiro candidato de cada partido
         Candidato[] primeiros = info.identificaPrimeirosPartido(partidos, candidatosValidos);
+
+        ComparadorUrnaCandidato urnaCandidato = new ComparadorUrnaCandidato();
+        Arrays.sort(primeiros, urnaCandidato);
         
         //Armazenando o ultimo candidato de cada partido
         Candidato[] ultimos = info.identificaUltimosPartido(partidos, candidatosValidos, primeiros);
           
-
-        ComparadorUrnaCandidato urnaCandidato = new ComparadorUrnaCandidato();
-        Arrays.sort(primeiros, urnaCandidato);
+        
         
 
         //------------------------CALCULOS DE IDADES, GÊNEROS E VOTOS------------------------

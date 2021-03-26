@@ -2,6 +2,8 @@ package src;
 
 public class Informacoes{
 
+    // ---------------- MÉTODOS PARA RETORNAR QUANTIDADES ESPECIFICAS -----------------
+
     public int retornaQtdEleitos(Candidato[] cand){ 
         int aux = 0;
         for(int i = 0; i < cand.length; i++){ 
@@ -38,6 +40,8 @@ public class Informacoes{
         }
         return aux;
     }
+
+    // ---------------- MÉTODOS PARA RETORNAR VETORES DE CANDIDATOS ESPECIFICOS -----------------
 
     public Candidato[] retornaCandValidos(Candidato[] cand) {
         Candidato[] candValidos = new Candidato[this.retornaQtdValidos(cand)];
@@ -108,6 +112,8 @@ public class Informacoes{
         return naoEleitos; 
     }
 
+    // ---------------- MÉTODOS PARA RETORNAR VETOR DE PARTIDOS ATUALIZADOS -----------------
+
     public Partido[] analisaVotosPartidos(Partido[] p, Candidato[] candValidos){
         for(int i = 0; i < p.length; i++){
             int total = 0;
@@ -124,6 +130,8 @@ public class Informacoes{
         return p;
     }
 
+    // ---------------- MÉTODO PARA RETORNAR PRIMEIROS CANDIDATOS DOS PARTIDOS -----------------
+
     public Candidato[] identificaPrimeirosPartido(Partido[] p, Candidato[] candValidos) {
         int k = 0;
         Candidato[] primeiros = new Candidato[p.length];
@@ -137,6 +145,7 @@ public class Informacoes{
                     break;       
                 }
             }
+            // Caso nao encontrar um candidato válido do partido, setar candidato como nullo
             if(naoValido){
                 primeiros[k] = new Candidato(0, 0, null, null, null, 'n', null, null, p[i].getNumero_partido());
                 k++;
@@ -144,6 +153,8 @@ public class Informacoes{
         }
         return primeiros;
     }
+
+    // ---------------- MÉTODO PARA RETORNAR ULTIMOS CANDIDATOS DOS PARTIDOS -----------------
 
     public Candidato[] identificaUltimosPartido(Partido[] p, Candidato[] candValidos, Candidato[] prim){
         int k = 0;
@@ -159,6 +170,7 @@ public class Informacoes{
                     break;     
                 }                          
             }
+            // Caso nao encontrar um candidato válido do partido, setar candidato como nullo
             if(naoValido){    
                 ultimos[k] = new Candidato(0, 0, null, null, null, 'n', null, null, p[i].getNumero_partido());
                 k++;
@@ -166,6 +178,8 @@ public class Informacoes{
         }
         return ultimos;
     }
+
+    // ---------------- MÉTODO PARA RETORNAR PARTIDO ATUALIZADO COM O NUM DE CANDIDATOS ELEITOS -----------------
 
     public Partido[] identificaEleitosPartidos(Partido[] p, Candidato[] candEleitos) {
         for(int i = 0; i < p.length; i++){
@@ -180,21 +194,23 @@ public class Informacoes{
         return p;
     }
 
+    // ---------------- MÉTODOS PARA RETORNAR IDADES, SEXOS E O NUMERO DE VOTOS TOTAL -----------------
+
     public int[] retornaIdades(Candidato[] candEleitos, String data){
         int idades[] = {0, 0, 0, 0, 0};
 
         for(int i=0; i<candEleitos.length; i++){
             int idade = candEleitos[i].retornaIdadeCandidato(data);
             if(idade < 30){
-                idades[0]++;
+                idades[0]++; // MENORES DE 30
             }else if(idade >= 30 && idade < 40){
-                idades[1]++;
+                idades[1]++; // MAIORES DE 30 E MENORES DE 40
             }else if(idade >= 40 && idade < 50){
-                idades[2]++;
+                idades[2]++; // MAIORES DE 40 E MENORES DE 50
             }else if(idade >= 50 && idade < 60){
-                idades[3]++;
+                idades[3]++; // MAIORES DE 50 E MENORES DE 60
             }else if(idade >= 60){
-                idades[4]++;
+                idades[4]++; // MAIORES DE 60
             }
         }
         return idades;     
@@ -215,10 +231,10 @@ public class Informacoes{
     public int[] retornaVotos(Partido[] partidos){
         int votos[] = {0, 0, 0};
         for(int i=0; i<partidos.length; i++){
-            votos[2] = votos[2] + partidos[i].getVotos_legenda();
-            votos[1] = votos[1] + partidos[i].getVotos_nominais();        
+            votos[2] = votos[2] + partidos[i].getVotos_legenda(); // Total votos legenda
+            votos[1] = votos[1] + partidos[i].getVotos_nominais(); // Total votos nominais        
         }
-        votos[0] = votos[1] + votos[2];
+        votos[0] = votos[1] + votos[2]; // Total de votos
 
         return votos;
     }

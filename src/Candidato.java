@@ -2,17 +2,19 @@ package src;
 
 import java.util.Comparator;
 
-class ComparadorUrnaCandidato implements Comparator<Candidato> {
 
+//------------------- CLASSE PARA COMPARAÇÃO PELO DESEMPATE DE NUMERO PARTIDO ------------------
+class ComparadorUrnaCandidato implements Comparator<Candidato> {
     @Override
     public int compare(Candidato cand1, Candidato cand2) {
         if(cand1 != null){
             if(cand1.getVotos_nominais() > cand2.getVotos_nominais()){
-                return -1;
+                return -1; 
             }
             else if(cand1.getVotos_nominais() < cand2.getVotos_nominais()){
                 return 1;
             }else{
+                //Em caso de empate, o menor numero partidário terá prioridade
                 if(cand1.getNumero_partido() < cand2.getNumero_partido()){
                     return -1;
                 }else{
@@ -21,22 +23,20 @@ class ComparadorUrnaCandidato implements Comparator<Candidato> {
             }
         }else{
             return 0;
-        }
-        
+        }  
     }
-
 }
 
 public class Candidato implements Comparable<Candidato>{
     private String nome;
-    private char sexo; // F ou M
-    private String data_nasc; // dd/mm/aaaa;    
+    private char sexo; 
+    private String data_nasc;  
     private int numero;
     private int numero_partido;
     private int votos_nominais;
-    private String situacao; // Eleito, não eleito, suplente
+    private String situacao; 
     private String nome_urna;
-    private String destino_voto; // Válido​,​Anulado ou ​Anulado subjudice​
+    private String destino_voto; 
 
     public Candidato(int numero, int votos_nominais, String situacao, String nome, String nome_urna, char sexo, String data_nasc, String destino_voto, int numero_partido){
         setNumero(numero);
@@ -49,6 +49,8 @@ public class Candidato implements Comparable<Candidato>{
         setDestino_voto(destino_voto);
         setNumero_partido(numero_partido);
     }
+
+    // --------------------- MÉTODOS DE GET E SET ------------------------
 
     public String getNome() {
         return nome;
@@ -105,6 +107,9 @@ public class Candidato implements Comparable<Candidato>{
         this.destino_voto = destino_voto;
     }
 
+
+    //------------------ MÉTODOS DE IDENTIFICAÇÃO ------------------------
+
     public boolean identificaEleitos(){
         return this.getSituacao().equals("Eleito");
     }
@@ -113,16 +118,18 @@ public class Candidato implements Comparable<Candidato>{
         return this.getDestino_voto().equals("Válido");
     }
 
+    //------------------- MÉTODOS DE IMPRESSÃO TOSTRING ------------------
+
     public String toString(Partido[] part){
         for(int i = 0; i < part.length; i++){
             if(part[i].comparaPartido(this.numero_partido)){
                 String print = this.getNome() + " / " + this.getNome_urna() + " (" + part[i].getSigla_partido() + ", " + Integer.toString(this.getVotos_nominais());
                 StringBuilder s = new StringBuilder(print);
                 if(this.getVotos_nominais() <= 1){
-                    s.append(" voto)");
+                    s.append(" voto)"); // caso seja no singular
                 }
                 else{
-                    s.append(" votos)");
+                    s.append(" votos)"); // caso seja no plural
                 }
                 print = s.toString();
                 return print;
@@ -137,17 +144,17 @@ public class Candidato implements Comparable<Candidato>{
                 String print = part[i].getSigla_partido() + " - " + this.getNumero_partido() + ", " + this.getNome_urna() + " (" + this.getNumero() + ", " + this.getVotos_nominais();
                 StringBuilder s = new StringBuilder(print);
                 if(this.getVotos_nominais() <= 1){
-                    s.append(" voto) / " + nome + " (" + num + ", " + votos);
+                    s.append(" voto) / " + nome + " (" + num + ", " + votos); // caso seja no singular
                 }
                 else{
-                    s.append(" votos) / " + nome + " (" + num + ", " + votos);
+                    s.append(" votos) / " + nome + " (" + num + ", " + votos); // caso seja no plural
                 }
                 
                 if(votos <= 1){
-                    s.append(" voto)");
+                    s.append(" voto)"); // caso seja no singular
                 }
                 else{
-                    s.append(" votos)");
+                    s.append(" votos)"); // caso seja no plural
                 }
                 
                 print = s.toString();
@@ -157,6 +164,9 @@ public class Candidato implements Comparable<Candidato>{
         return "erro";
     }
 
+    //------------------- MÉTODO DE COMPARAÇÃO PARA O ARRAYS.SORT ------------------
+
+    @Override
     public int compareTo(Candidato cand) {
         if(cand != null){
             String[] dataCand1 = new String[3];
@@ -172,6 +182,7 @@ public class Candidato implements Comparable<Candidato>{
                 return 1;
             }
             else{
+                // Em caso de empate, o candidato mais velho terá prioridade 
                 if(Integer.parseInt(dataCand1[2]) < Integer.parseInt(dataCand2[2])){ // retorna -1, o cand1 é mais velho
                     return -1;
                 }
@@ -193,6 +204,7 @@ public class Candidato implements Comparable<Candidato>{
                             return 1;
                         }
                         else{
+                            // Caso eles tiverem a mesma idade, número do candidato irá desempatar
                             if(this.getNumero() < cand.getNumero()){
                                 return -1;
                             }
@@ -207,6 +219,7 @@ public class Candidato implements Comparable<Candidato>{
         return 0;
     }
 
+    //------------------- MÉTODO DE COMPARAÇÃO PELO NÚMERO DO PARTIDO ------------------
     public boolean comparaNumPartido(int numeroId){
         if(this.numero_partido == numeroId){
             return true;
@@ -214,8 +227,9 @@ public class Candidato implements Comparable<Candidato>{
         return false;
     }
 
+    //------------------- MÉTODO PARA RETORNAR IDADE DO CANDIDATO ------------------
     public int retornaIdadeCandidato(String dataRef){
-        String[] dataCand = new String[3];
+        String[] dataCand = new String[3]; 
         String[] dataAtual = new String[3];
 
         dataCand = this.data_nasc.split("/");

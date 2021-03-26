@@ -11,7 +11,8 @@ class Vereadores{
 
     public static void main (String[] args) throws IOException{
 
-        //------------------Verifica argumentos passados-----------------------
+        //------------------Verifica possíveis erros de entrada de argumento-----------------------
+
         if(args == null || args.length < 3){
             System.out.println("\nERRO: Argumentos insuficientes\n");
             System.exit(0); 
@@ -25,6 +26,7 @@ class Vereadores{
             System.exit(0); 
         }
 
+
         //------------------Leitura arquivos---------------------
 
         Inout inout = new Inout();
@@ -32,10 +34,6 @@ class Vereadores{
         String fileCandidatos = args[0];
         String filePartidos = args[1];
         String dataEleicao = args[2];
-
-        //String fileCandidatos = "capitais/vitória-candidatos.csv";
-        //String filePartidos = "capitais/vitória-partidos.csv";
-        //String dataEleicao = "15/11/2020";
         
         // Chama método para ler os candidatos e os partidos
         Candidato[] candidatos = inout.leCandidatos(fileCandidatos);
@@ -50,6 +48,7 @@ class Vereadores{
         // Organiza os candidatos válidos por ordem de mais votados
         Arrays.sort(candidatosValidos); 
 
+
         //-------------------ANALISA CANDIDATOS--------------------
 
         // Os candidatos eleitos são separados em um vetor
@@ -58,47 +57,50 @@ class Vereadores{
         // Os mais votados são separados em um vetor
         Candidato[] maisVotados = info.retornaCandsMaisVotados(candidatosValidos, qtdEleitos);
 
-        // Armazenaremos os candidatos presentes na lista de mais votados mas que não foram eleitos
+        // Os mais votados que não foram eleitos são separados em um vetor
         Candidato[] naoEleitos = info.identificaNaoEleitos(candidatosEleitos, maisVotados);
 
-        // Armazenaremos os candidatos não presentes na lista de mais votados mas que foram eleitos
+        // Os eleitos que não foram os mais votados são separados em um vetor
         Candidato[] beneficiados = info.identificaBeneficiados(candidatosEleitos, maisVotados);
 
 
         //--------------ANALISA VOTOS PARTIDO---------------
 
+        // Identifica o total de votos de cada partido
         partidos = info.analisaVotosPartidos(partidos, candidatosValidos);
 
-        
-
-        // identifica quantos candidatos foram eleitos de cada partido
+        // Identifica quantos candidatos foram eleitos de cada partido
         partidos = info.identificaEleitosPartidos(partidos, candidatosEleitos);
 
-        Arrays.sort(partidos); // organiza os partidos por maior numero de votos no total
+        // Organiza os partidos por maior numero de votos no total
+        Arrays.sort(partidos); 
 
-        //Armazenando o primeiro candidato de cada partido
+        // Armazena o primeiro candidato de cada partido
         Candidato[] primeiros = info.identificaPrimeirosPartido(partidos, candidatosValidos);
 
+        // Organiza os primeiros candidatos dos partidos por maior numero de votos nominais
         ComparadorUrnaCandidato urnaCandidato = new ComparadorUrnaCandidato();
         Arrays.sort(primeiros, urnaCandidato);
         
-        //Armazenando o ultimo candidato de cada partido
+        // Armazena o ultimo candidato de cada partido
         Candidato[] ultimos = info.identificaUltimosPartido(partidos, candidatosValidos, primeiros);
-          
-        
-        
 
+        
         //------------------------CALCULOS DE IDADES, GÊNEROS E VOTOS------------------------
 
         int idades[] = info.retornaIdades(candidatosEleitos, dataEleicao);
         int sexos[] = info.retornaSexos(candidatosEleitos);
         int votos[] = info.retornaVotos(partidos);
+       
         
         //------------------------IMPRESSÕES DO CÓDIGO-------------------------
 
         inout.ImprimeRelatorios(qtdEleitos, candidatosEleitos, partidos, maisVotados, 
                                 naoEleitos, candidatosValidos, beneficiados, primeiros, ultimos);
         inout.ImprimeIdadeSexoVoto(idades, sexos, votos, qtdEleitos);
+
+
+        //------------------------FECHA ARQUIVOS DOS CASOS DE ERRO-------------------------
 
         fileInputCand.close();
         fileInputPart.close();

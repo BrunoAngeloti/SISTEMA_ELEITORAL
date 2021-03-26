@@ -7,6 +7,8 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class Inout{
+
+    // ---------------- MÉTODOS PARA LEITURA DOS ARQUIVOS -----------------
     
     public Candidato[] leCandidatos(String arq) throws IOException{
         //Lê arquivo de candidatos e coloca dentro de uma lista de Candidatos
@@ -24,7 +26,7 @@ public class Inout{
     public Partido[] lePartidos(String arq) throws IOException{
         // Lê o arquivo de partidos e coloca dentro de uma lista de Partidos
         List<Partido> partAux = Files.lines(Paths.get(arq))
-             .skip(1)
+             .skip(1) //ignora a primeira linha do cabeçalhos
              .map(line -> line.split(","))
              .map(str -> new Partido(Integer.parseInt(str[0]), Integer.parseInt(str[1]), str[2], str[3]))
              .collect(Collectors.toList());
@@ -33,6 +35,8 @@ public class Inout{
 
         return partidos;
     }
+
+    // ---------------- MÉTODOS PARA IMPRESSÃO DOS RELATÓRIOS -----------------
 
     private void ImprimeNumVagas(int qtdEleitos){
         System.out.println("Número de vagas: " + qtdEleitos + "\n");

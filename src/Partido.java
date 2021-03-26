@@ -19,6 +19,8 @@ public class Partido implements Comparable<Partido>{
         setCand_eleitos(0);
     }
 
+    // --------------------- MÉTODOS DE GET E SET ------------------------
+
     public int getNumero_partido() {
         return numero_partido;
     }
@@ -61,6 +63,8 @@ public class Partido implements Comparable<Partido>{
     public void setCand_eleitos(int cand_eleitos) {
         this.cand_eleitos = cand_eleitos;
     }
+
+    //------------------- MÉTODO DE COMPARAÇÃO PELO NÚMERO DO PARTIDO ------------------
     
     public boolean comparaPartido(int numeroId){
         if(this.numero_partido == numeroId){
@@ -68,6 +72,8 @@ public class Partido implements Comparable<Partido>{
         }
         return false;
     }
+
+    //------------------- MÉTODO DE COMPARAÇÃO PARA O ARRAYS.SORT ------------------
 
     @Override
     public int compareTo(Partido part) {
@@ -85,31 +91,33 @@ public class Partido implements Comparable<Partido>{
         }
     }
     
+    //------------------- MÉTODO DE IMPRESSÃO TOSTRING ------------------
+
     public String toString(){
         String print = this.sigla_partido + " - " + this.numero_partido + ", " + Integer.toString(this.getVotos_total());
         StringBuilder result = new StringBuilder(print);
           
         if(this.getVotos_total() <= 1){
-           result.append(" voto (");
+           result.append(" voto ("); // caso seja no singular
         }
         else{
-            result.append(" votos (");
+            result.append(" votos ("); // caso seja no plural
         }
 
         result.append(Integer.toString(this.getVotos_nominais()));
         if(this.getVotos_nominais() <= 1){
-            result.append(" nominal e ");
+            result.append(" nominal e "); // caso seja no singular
         }
         else{
-            result.append(" nominais e ");
+            result.append(" nominais e "); // caso seja no plural
         }
 
         result.append(Integer.toString(this.getVotos_legenda()) + " de legenda), " + Integer.toString(this.getCand_eleitos()));
         if(this.getCand_eleitos() <= 1){
-            result.append(" candidato eleito");
+            result.append(" candidato eleito"); // caso seja no singular
         }
         else{
-            result.append(" candidatos eleitos");
+            result.append(" candidatos eleitos"); // caso seja no plural
         }
         print = result.toString();
         return print;

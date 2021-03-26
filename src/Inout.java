@@ -38,25 +38,25 @@ public class Inout{
 
     // ---------------- MÉTODOS PARA IMPRESSÃO DOS RELATÓRIOS -----------------
 
-    private void ImprimeNumVagas(int qtdEleitos){
+    private void imprimeNumVagas(int qtdEleitos){
         System.out.println("Número de vagas: " + qtdEleitos + "\n");
     }
 
-    private void ImprimeVereadoresEleitos(Candidato[] candidatosEleitos, Partido[] partidos){
+    private void imprimeVereadoresEleitos(Candidato[] candidatosEleitos, Partido[] partidos){
         System.out.println("Vereadores eleitos:");
         for(int i = 0; i < candidatosEleitos.length; i++){  
             System.out.println((i+1) + " - " + candidatosEleitos[i].toString(partidos));
         } 
     }
 
-    private void ImprimeMaisVotados(Candidato[] maisVotados, Partido[] partidos){
+    private void imprimeMaisVotados(Candidato[] maisVotados, Partido[] partidos){
         System.out.println("\nCandidatos mais votados (em ordem decrescente de votação e respeitando número de vagas):");      
         for(int i = 0; i < maisVotados.length; i++){
             System.out.println((i+1) + " - " + maisVotados[i].toString(partidos));          
         } 
     }
 
-    private void ImprimeNaoEleitos(Candidato[] maisVotados, Candidato[] naoEleitos, Partido[] partidos){
+    private void imprimeNaoEleitos(Candidato[] maisVotados, Candidato[] naoEleitos, Partido[] partidos){
         System.out.println("\nTeriam sido eleitos se a votação fosse majoritária, e não foram eleitos:\n(com sua posição no ranking de mais votados)");
         
         for(int i = 0; i < naoEleitos.length; i++){
@@ -69,7 +69,7 @@ public class Inout{
         } 
     }
 
-    private void ImprimeBeneficiados(Candidato[] candValidos, Candidato[] beneficiados, Partido[] partidos){
+    private void imprimeBeneficiados(Candidato[] candValidos, Candidato[] beneficiados, Partido[] partidos){
         System.out.println("\nEleitos, que se beneficiaram do sistema proporcional:\n(com sua posição no ranking de mais votados)");
 
         for(int i = 0; i < beneficiados.length; i++){
@@ -83,14 +83,14 @@ public class Inout{
         }
     }
 
-    private void ImprimePartidos(Partido[] partidos){
+    private void imprimePartidos(Partido[] partidos){
         System.out.println("\nVotação dos partidos e número de candidatos eleitos:");
         for(int i = 0; i < partidos.length; i++){
             System.out.println((i + 1) + " - " + partidos[i].toString());         
         }
     }
 
-    private void ImprimePrimUlt(Candidato[] primeiros, Candidato[] ultimos, Partido[] partidos){
+    private void imprimePrimUlt(Candidato[] primeiros, Candidato[] ultimos, Partido[] partidos){
         System.out.println("\nPrimeiro e último colocados de cada partido:");
         for(int m = 0, n = 1; m < primeiros.length; m++){
             int numPartido = primeiros[m].getNumero_partido();
@@ -112,7 +112,7 @@ public class Inout{
         } 
     }
 
-    public void ImprimeRelatorios(
+    public void imprimeRelatorios(
         int qtdEleitos, Candidato[] candidatosEleitos, Partido[] partidos, 
         Candidato[] maisVotados, Candidato[] naoEleitos, Candidato[] candidatosValidos, Candidato[] beneficiados,
         Candidato[] primeiros, Candidato[] ultimos
@@ -128,7 +128,7 @@ public class Inout{
 
 
 
-    public void ImprimeIdadeSexoVoto(int[] idades, int[] sexos, int[] votos, int qtdEleitos){
+    public void imprimeIdadeSexoVoto(int[] idades, int[] sexos, int[] votos, int qtdEleitos){
         System.out.println("\nEleitos, por faixa etária (na data da eleição):");
         
         System.out.println("      Idade < 30: " + idades[0] + " (" + (String.format("%.2f" ,((double)idades[0]/qtdEleitos*100))) + "%)");

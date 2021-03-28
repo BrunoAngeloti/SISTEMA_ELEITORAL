@@ -95,9 +95,9 @@ class Vereadores{
         
         //------------------------IMPRESSÕES DO CÓDIGO-------------------------
 
-        inout.ImprimeRelatorios(qtdEleitos, candidatosEleitos, partidos, maisVotados, 
+        inout.imprimeRelatorios(qtdEleitos, candidatosEleitos, partidos, maisVotados, 
                                 naoEleitos, candidatosValidos, beneficiados, primeiros, ultimos);
-        inout.ImprimeIdadeSexoVoto(idades, sexos, votos, qtdEleitos);
+        inout.imprimeIdadeSexoVoto(idades, sexos, votos, qtdEleitos);
 
 
         //------------------------FECHA ARQUIVOS DOS CASOS DE ERRO-------------------------

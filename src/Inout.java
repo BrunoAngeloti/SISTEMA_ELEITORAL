@@ -117,13 +117,13 @@ public class Inout{
         Candidato[] maisVotados, Candidato[] naoEleitos, Candidato[] candidatosValidos, Candidato[] beneficiados,
         Candidato[] primeiros, Candidato[] ultimos
     ){
-        this.ImprimeNumVagas(qtdEleitos);
-        this.ImprimeVereadoresEleitos(candidatosEleitos, partidos);
-        this.ImprimeMaisVotados(maisVotados, partidos);
-        this.ImprimeNaoEleitos(maisVotados, naoEleitos, partidos);
-        this.ImprimeBeneficiados(candidatosValidos, beneficiados, partidos);
-        this.ImprimePartidos(partidos);
-        this.ImprimePrimUlt(primeiros, ultimos, partidos);
+        this.imprimeNumVagas(qtdEleitos);
+        this.imprimeVereadoresEleitos(candidatosEleitos, partidos);
+        this.imprimeMaisVotados(maisVotados, partidos);
+        this.imprimeNaoEleitos(maisVotados, naoEleitos, partidos);
+        this.imprimeBeneficiados(candidatosValidos, beneficiados, partidos);
+        this.imprimePartidos(partidos);
+        this.imprimePrimUlt(primeiros, ultimos, partidos);
     }
 
 
